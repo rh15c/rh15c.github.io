@@ -4,102 +4,118 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Personal Portfolio</title>
+<title>[NAMA ANDA] | Production Engineer</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-body{
-    background:#020617;
-    overflow-x:hidden;
+
+html{
+scroll-behavior:smooth;
 }
 
-.glass{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,0.1);
+body{
+background:#020617;
+overflow-x:hidden;
+font-family:Inter,sans-serif;
 }
 
 .gradient-bg{
-    position:fixed;
-    inset:0;
-    z-index:-2;
-    background:
-    radial-gradient(circle at 20% 20%, rgba(6,182,212,.25), transparent 35%),
-    radial-gradient(circle at 80% 80%, rgba(59,130,246,.25), transparent 35%);
+position:fixed;
+inset:0;
+z-index:-2;
+
+background:
+radial-gradient(circle at 20% 20%, rgba(6,182,212,.20), transparent 35%),
+radial-gradient(circle at 80% 80%, rgba(59,130,246,.20), transparent 35%);
 }
 
-.particle{
-    position:absolute;
-    border-radius:50%;
-    background:rgba(34,211,238,.4);
-    animation:float linear infinite;
-}
-
-@keyframes float{
-    from{
-        transform:translateY(0);
-    }
-    to{
-        transform:translateY(-100vh);
-    }
+.glass{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.1);
 }
 
 .hero-image{
-    animation:levitate 5s ease-in-out infinite;
+animation:floatHero 6s ease-in-out infinite;
 }
 
-@keyframes levitate{
-    0%,100%{
-        transform:translateY(0px);
-    }
-    50%{
-        transform:translateY(-15px);
-    }
+@keyframes floatHero{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-15px);
+}
 }
 
 .fade{
-    opacity:0;
-    transform:translateY(30px);
-    transition:all .8s;
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
 }
 
 .fade.show{
-    opacity:1;
-    transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
 .loader{
-    position:fixed;
-    inset:0;
-    background:#020617;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
+position:fixed;
+inset:0;
+background:#020617;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
 }
 
 .spinner{
-    width:90px;
-    height:90px;
-    border:5px solid #22d3ee;
-    border-top:5px solid transparent;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
+width:90px;
+height:90px;
+border:4px solid #22d3ee;
+border-top:4px solid transparent;
+border-radius:50%;
+animation:spin 1s linear infinite;
 }
 
 @keyframes spin{
-    to{
-        transform:rotate(360deg);
-    }
+100%{
+transform:rotate(360deg);
 }
+}
+
+.particle{
+position:absolute;
+background:#22d3ee;
+border-radius:50%;
+opacity:.3;
+animation:particleMove linear infinite;
+}
+
+@keyframes particleMove{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-120vh);
+}
+}
+
+.glow{
+box-shadow:
+0 0 20px rgba(34,211,238,.3),
+0 0 40px rgba(34,211,238,.2);
+}
+
 </style>
+
 </head>
 
 <body class="text-white">
 
 <div id="loader" class="loader">
-    <div class="spinner"></div>
+<div class="spinner"></div>
 </div>
 
 <div class="gradient-bg"></div>
@@ -107,48 +123,70 @@ body{
 <div id="particles"></div>
 
 <!-- NAVBAR -->
-<nav class="fixed top-0 w-full z-50 glass">
-<div class="max-w-7xl mx-auto flex justify-between items-center p-5">
 
-<h1 class="font-bold text-2xl text-cyan-400">
+<nav class="fixed top-0 w-full z-50 glass">
+
+<div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
+
+<h1 class="text-2xl font-black text-cyan-400">
 MYPORTFOLIO
 </h1>
 
 <div class="hidden md:flex gap-8">
+
 <a href="#about">About</a>
+<a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
+
 </div>
 
 </div>
+
 </nav>
 
 <!-- HERO -->
+
 <section class="min-h-screen flex items-center">
 
 <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
 <div>
+
 <span class="px-4 py-2 border border-cyan-500 rounded-full text-cyan-400">
-Production Engineer
+Senior Production Engineer
 </span>
 
-<h1 class="text-6xl md:text-7xl font-black mt-6">
+<h1 class="text-6xl md:text-7xl font-black mt-6 leading-tight">
+
 Hello,
-<span class="text-cyan-400 block">
-I'm Your Name
+
+<span class="block text-cyan-400">
+I'm [NAMA ANDA]
 </span>
+
 </h1>
 
-<p class="text-slate-300 mt-6 text-lg">
-Production Optimization, Reliability Engineering,
-Well Surveillance, Data Analytics, dan Digital Transformation.
+<p class="mt-6 text-slate-300 text-lg leading-8">
+
+Production Engineer with extensive experience in
+Well Optimization,
+Production Surveillance,
+Sand Management,
+Asset Reliability,
+Data Analytics,
+SQL,
+Power BI,
+and Digital Transformation
+for Oil & Gas Operations.
+
 </p>
 
-<div class="mt-8 flex gap-4">
+<div class="mt-8 flex flex-wrap gap-4">
+
 <a href="#projects"
-class="bg-cyan-500 hover:bg-cyan-400 px-8 py-4 rounded-xl">
+class="bg-cyan-500 hover:bg-cyan-400 px-8 py-4 rounded-xl transition">
 Portfolio
 </a>
 
@@ -156,16 +194,35 @@ Portfolio
 class="border border-white/20 px-8 py-4 rounded-xl">
 Contact
 </a>
+
+<a href="cv.pdf"
+target="_blank"
+class="glass px-8 py-4 rounded-xl">
+Download CV
+</a>
+
+<a href="https://linkedin.com/in/username"
+target="_blank"
+class="glass px-8 py-4 rounded-xl">
+LinkedIn
+</a>
+
 </div>
+
 </div>
 
 <div class="hero-image">
-<div class="glass rounded-[40px] p-5">
+
+<div class="glass p-5 rounded-[40px] glow">
+
 <img
-src="https://rh15c/rh15c.github.io/blob/main/img.png"
-class="rounded-3xl"
->
+src="./img.png"
+alt="Profile"
+class="rounded-3xl w-full"
+/>
+
 </div>
+
 </div>
 
 </div>
@@ -173,6 +230,7 @@ class="rounded-3xl"
 </section>
 
 <!-- STATS -->
+
 <section class="py-20">
 
 <div class="max-w-7xl mx-auto px-6">
@@ -180,22 +238,22 @@ class="rounded-3xl"
 <div class="grid md:grid-cols-4 gap-6">
 
 <div class="glass p-8 rounded-3xl text-center fade">
-<h2 class="text-4xl text-cyan-400 font-bold">10+</h2>
+<h2 class="text-4xl font-bold text-cyan-400">10+</h2>
 <p>Tahun Pengalaman</p>
 </div>
 
 <div class="glass p-8 rounded-3xl text-center fade">
-<h2 class="text-4xl text-cyan-400 font-bold">100+</h2>
+<h2 class="text-4xl font-bold text-cyan-400">100+</h2>
 <p>Well Support</p>
 </div>
 
 <div class="glass p-8 rounded-3xl text-center fade">
-<h2 class="text-4xl text-cyan-400 font-bold">50+</h2>
+<h2 class="text-4xl font-bold text-cyan-400">50+</h2>
 <p>Projects</p>
 </div>
 
 <div class="glass p-8 rounded-3xl text-center fade">
-<h2 class="text-4xl text-cyan-400 font-bold">99.9%</h2>
+<h2 class="text-4xl font-bold text-cyan-400">99.9%</h2>
 <p>Availability</p>
 </div>
 
@@ -206,21 +264,29 @@ class="rounded-3xl"
 </section>
 
 <!-- ABOUT -->
+
 <section id="about" class="py-20">
 
 <div class="max-w-5xl mx-auto px-6">
 
 <div class="glass p-10 rounded-3xl fade">
 
-<h2 class="text-4xl font-bold mb-6 text-cyan-400">
+<h2 class="text-4xl font-bold text-cyan-400 mb-6">
 About Me
 </h2>
 
 <p class="text-slate-300 leading-8">
-Saya seorang profesional yang berpengalaman dalam
-production engineering, reliability improvement,
-sand management, automation, troubleshooting ASD,
-database SQL, dan digitalisasi operasi migas.
+
+Experienced Production Engineer specializing in
+production optimization,
+well surveillance,
+sand management,
+reliability improvement,
+ASD troubleshooting,
+asset integrity,
+database development,
+and operational digitalization.
+
 </p>
 
 </div>
@@ -229,7 +295,45 @@ database SQL, dan digitalisasi operasi migas.
 
 </section>
 
+<!-- EXPERIENCE -->
+
+<section id="experience" class="py-20">
+
+<div class="max-w-5xl mx-auto px-6">
+
+<h2 class="text-center text-5xl font-bold mb-12">
+Experience
+</h2>
+
+<div class="glass p-10 rounded-3xl fade">
+
+<h3 class="text-3xl font-bold text-cyan-400">
+Production Engineer
+</h3>
+
+<p class="mt-2 text-slate-400">
+Oil & Gas Industry
+</p>
+
+<ul class="mt-6 space-y-3 text-slate-300">
+
+<li>✓ Well Performance Optimization</li>
+<li>✓ Sand Management Implementation</li>
+<li>✓ ASD Reliability Improvement</li>
+<li>✓ Production Dashboard Development</li>
+<li>✓ SQL & Power BI Analytics</li>
+<li>✓ Asset Integrity Monitoring</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- SKILLS -->
+
 <section id="skills" class="py-20">
 
 <div class="max-w-7xl mx-auto px-6">
@@ -241,24 +345,24 @@ Skills
 <div class="grid md:grid-cols-3 gap-8">
 
 <div class="glass p-8 rounded-3xl fade">
-<h3 class="text-2xl font-bold mb-4">
+<h3 class="text-2xl font-bold mb-3">
 Production Engineering
 </h3>
 <p>Well Optimization & Surveillance</p>
 </div>
 
 <div class="glass p-8 rounded-3xl fade">
-<h3 class="text-2xl font-bold mb-4">
+<h3 class="text-2xl font-bold mb-3">
 Data Analytics
 </h3>
 <p>SQL, Power BI, Dashboarding</p>
 </div>
 
 <div class="glass p-8 rounded-3xl fade">
-<h3 class="text-2xl font-bold mb-4">
-Reliability
+<h3 class="text-2xl font-bold mb-3">
+Reliability Engineering
 </h3>
-<p>Maintenance & Asset Integrity</p>
+<p>Asset Integrity & Maintenance</p>
 </div>
 
 </div>
@@ -268,6 +372,7 @@ Reliability
 </section>
 
 <!-- PROJECTS -->
+
 <section id="projects" class="py-20">
 
 <div class="max-w-7xl mx-auto px-6">
@@ -296,14 +401,14 @@ ASD Reliability Program
 <h3 class="text-2xl text-cyan-400 mb-3">
 Production Dashboard
 </h3>
-<p>Operational KPI monitoring.</p>
+<p>Operational KPI Monitoring.</p>
 </div>
 
 <div class="glass p-8 rounded-3xl fade">
 <h3 class="text-2xl text-cyan-400 mb-3">
 Well Optimization
 </h3>
-<p>Production enhancement initiative.</p>
+<p>Production Enhancement Initiative.</p>
 </div>
 
 </div>
@@ -313,17 +418,18 @@ Well Optimization
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact" class="py-20">
 
 <div class="max-w-4xl mx-auto px-6">
 
 <div class="glass p-10 rounded-3xl fade">
 
-<h2 class="text-4xl font-bold mb-8 text-cyan-400">
+<h2 class="text-4xl text-cyan-400 font-bold mb-8">
 Contact
 </h2>
 
-<p>📧 email@domain.com</p>
+<p>📧 yourmail@email.com</p>
 <p class="mt-3">📱 +62 xxx xxxx xxxx</p>
 <p class="mt-3">📍 Samarinda, Indonesia</p>
 
@@ -333,52 +439,124 @@ Contact
 
 </section>
 
-<footer class="text-center py-8 text-slate-400 border-t border-white/10">
-© 2026 Personal Portfolio
+<footer class="border-t border-white/10 py-8 text-center text-slate-400">
+© 2026 [NAMA ANDA]
 </footer>
 
+<!-- THREE JS -->
+
+<script type="module">
+
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js";
+
+const scene=new THREE.Scene();
+
+const camera=new THREE.PerspectiveCamera(
+75,
+window.innerWidth/window.innerHeight,
+0.1,
+1000
+);
+
+const renderer=new THREE.WebGLRenderer({
+alpha:true
+});
+
+renderer.setSize(
+window.innerWidth,
+window.innerHeight
+);
+
+renderer.domElement.style.position="fixed";
+renderer.domElement.style.top="0";
+renderer.domElement.style.zIndex="-3";
+
+document.body.appendChild(renderer.domElement);
+
+const geometry=new THREE.IcosahedronGeometry(2,1);
+
+const material=new THREE.MeshBasicMaterial({
+wireframe:true
+});
+
+const mesh=new THREE.Mesh(
+geometry,
+material
+);
+
+scene.add(mesh);
+
+camera.position.z=5;
+
+function animate(){
+
+requestAnimationFrame(animate);
+
+mesh.rotation.x+=0.003;
+mesh.rotation.y+=0.005;
+
+renderer.render(scene,camera);
+
+}
+
+animate();
+
+</script>
+
 <script>
-// Loading
-window.onload = () => {
-    setTimeout(()=>{
-        document.getElementById("loader").style.display="none";
-    },1500);
+
+// Loader
+
+window.onload=()=>{
+setTimeout(()=>{
+document.getElementById("loader").style.display="none";
+},1500);
 };
 
 // Particles
-const particles = document.getElementById("particles");
 
-for(let i=0;i<50;i++){
+const particles=document.getElementById("particles");
 
-    const p=document.createElement("div");
+for(let i=0;i<80;i++){
 
-    p.classList.add("particle");
+const p=document.createElement("div");
 
-    let size=Math.random()*5+2;
+p.classList.add("particle");
 
-    p.style.width=size+"px";
-    p.style.height=size+"px";
+let size=Math.random()*5+2;
 
-    p.style.left=Math.random()*100+"vw";
-    p.style.top=Math.random()*100+"vh";
+p.style.width=size+"px";
+p.style.height=size+"px";
 
-    p.style.animationDuration=(Math.random()*20+10)+"s";
+p.style.left=Math.random()*100+"vw";
+p.style.top=Math.random()*100+"vh";
 
-    particles.appendChild(p);
+p.style.animationDuration=(Math.random()*15+10)+"s";
+
+particles.appendChild(p);
+
 }
 
-// Scroll Animation
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-    });
+// Scroll animation
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
 });
 
 document.querySelectorAll(".fade").forEach(el=>{
-    observer.observe(el);
+observer.observe(el);
 });
+
 </script>
 
 </body>
