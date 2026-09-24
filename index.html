@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salsabila Edu — Mockup Terbaru</title>
+<title>Salsabila Edu — Mockup</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -19,6 +20,7 @@
 html,body{margin:0;padding:0;}
 body{background:var(--paper); color:var(--ink); font-family:'Quicksand', sans-serif; min-height:100vh;}
 h1,h2,h3{font-family:'Baloo 2', sans-serif; font-weight:700; color:var(--teal-900); margin:0;}
+
 .wrap{max-width:1180px; margin:0 auto; padding:48px 24px 90px;}
 .hidden{display:none !important;}
 
@@ -35,54 +37,52 @@ h1,h2,h3{font-family:'Baloo 2', sans-serif; font-weight:700; color:var(--teal-90
 .program-card p{font-size:13px; color:var(--ink-soft); line-height:1.6;}
 @media (max-width:640px){.landing-grid{grid-template-columns:1fr;}}
 
+/* ===== KALENDER AKADEMIK DI LANDING PAGE ===== */
+.kalender-landing{max-width:800px; margin:36px auto 0;}
+.kalender-landing h3{font-size:17px; text-align:center; margin-bottom:16px;}
+.kalender-timeline{background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md); padding:8px 20px; max-height:280px; overflow-y:auto;}
+.kal-item{display:flex; gap:14px; padding:12px 0; border-bottom:1px solid var(--line); align-items:flex-start;}
+.kal-item:last-child{border-bottom:none;}
+.kal-date{flex-shrink:0; width:96px; font-size:11.5px; font-weight:700; color:var(--teal-900); line-height:1.4;}
+.kal-info{flex:1;}
+.kal-info .kal-title{font-size:13.5px; font-weight:600; margin:0;}
+.kal-badge{display:inline-block; margin-top:4px; font-size:10px; font-weight:700; padding:2px 9px; border-radius:999px;}
+.kal-badge.kegiatan{background:var(--teal-100); color:var(--teal-900);}
+.kal-badge.libur{background:var(--danger-100); color:var(--danger);}
+.kal-badge.ppdb{background:var(--brass-100); color:var(--brass);}
+.kal-badge.semester{background:var(--sage-100); color:var(--sage);}
+
+/* ===== LOGIN ===== */
 .login-box{max-width:380px; margin:0 auto; background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md); padding:28px;}
 .login-box .back-link{font-size:12.5px; color:var(--teal-700); cursor:pointer; margin-bottom:16px; display:inline-block;}
 .role-tabs{display:flex; gap:6px; margin-bottom:18px;}
 .role-tabs button{flex:1; padding:8px 0; border-radius:999px; border:1px solid var(--line); background:var(--paper); font-size:12.5px; font-weight:600; cursor:pointer; color:var(--ink-soft);}
-.role-tabs button.on{background:var(--teal-700); color:var(--brass-100); border-color:var(--teal-700);}
+.role-tabs button.on{background:var(--teal-700); color:#fff; border-color:var(--teal-700);}
 label{font-size:11.5px; color:var(--muted); display:block; margin:0 0 6px;}
-input[type=text],input[type=email],input[type=password],input[type=date],select,textarea{
+input[type=text],input[type=email],input[type=password],input[type=date],input[type=month],input[type=number],input[type=file],select,textarea{
   width:100%; font-family:inherit; font-size:13px; border:1px solid var(--line); border-radius:var(--radius-sm);
   padding:10px 12px; background:var(--paper-raised); color:var(--ink); margin-bottom:14px;
 }
-.btn{font-weight:600; font-size:13px; border-radius:999px; padding:10px 18px; border:none; cursor:pointer;}
-.btn-primary{background:var(--teal-700); color:var(--brass-100); width:100%;}
+.btn{font-weight:700; font-size:13px; border-radius:999px; padding:10px 18px; border:none; cursor:pointer;}
+.btn-primary{background:var(--teal-700); color:#fff; width:100%;}
 .btn-primary:hover{opacity:.9;}
 .error-msg{background:var(--danger-100); color:var(--danger); font-size:12.5px; padding:9px 12px; border-radius:var(--radius-sm); margin-bottom:14px;}
 .hint{font-size:11px; color:var(--muted); margin-top:14px; line-height:1.6;}
 
-.browser{max-width:1060px; margin:0 auto; background:var(--paper-raised); border-radius:18px; box-shadow:var(--shadow-frame); overflow:hidden;}
-.browser-chrome{display:flex; align-items:center; gap:8px; padding:12px 16px; background:#eee6d4; border-bottom:1px solid var(--line);}
-.dot-b{width:9px; height:9px; border-radius:50%; background:#d8cba9;}
-.browser-chrome .url{flex:1; margin-left:8px; background:var(--paper-raised); border-radius:999px; font-size:11.5px; color:var(--muted); padding:6px 14px;}
-.browser-chrome .logout{font-size:12px; font-weight:700; color:var(--danger); cursor:pointer;}
-
-/* ===== APLIKASI: FULL DESKTOP PAGE (bukan frame kecil di tengah layar) ===== */
+/* ===== SHELL APLIKASI (FULL DESKTOP) ===== */
 .app-shell{display:flex; width:100%; min-height:100vh; background:var(--paper);}
-.app-sidebar{width:240px; flex-shrink:0; background:var(--teal-900); color:var(--brass-100); padding:26px 18px; position:sticky; top:0; height:100vh; overflow-y:auto;}
+.app-sidebar{width:240px; flex-shrink:0; background:var(--teal-900); color:#fff; padding:26px 18px; position:sticky; top:0; height:100vh; overflow-y:auto;}
 .app-sidebar .brand{font-family:'Baloo 2',sans-serif; font-size:18px; margin-bottom:2px; padding:0 6px;}
-.app-sidebar .tag{font-size:11.5px; color:rgba(248,241,228,.55); padding:0 6px; margin-bottom:26px; line-height:1.5;}
-.app-topbar{display:flex; justify-content:space-between; align-items:center; padding:12px 32px; border-bottom:1px solid var(--line); background:var(--paper-raised); position:sticky; top:0; z-index:5; min-height:0;}
+.app-sidebar .tag{font-size:11.5px; color:rgba(255,255,255,.6); padding:0 6px; margin-bottom:26px; line-height:1.5;}
+.app-topbar{display:flex; justify-content:space-between; align-items:center; padding:12px 32px; border-bottom:1px solid var(--line); background:var(--paper-raised); position:sticky; top:0; z-index:5;}
 .app-crumb{font-size:12px; color:var(--muted);}
 .app-content{padding:24px 32px 56px; flex:1; max-width:1200px;}
 .app-main{flex:1; min-width:0; display:flex; flex-direction:column;}
 .logout{font-size:12.5px; font-weight:700; color:var(--danger); cursor:pointer;}
 
-/* ===== BANNER RAMAH ANAK ===== */
-.kid-banner{
-  display:flex; align-items:center; justify-content:space-between; gap:20px;
-  background:linear-gradient(135deg, var(--teal-700), var(--teal-500));
-  border-radius:var(--radius-lg); padding:22px 28px; margin-bottom:22px; overflow:hidden; position:relative;
-  color:#fff;
-}
-.kid-banner .kb-text h2{color:#fff; font-size:22px; margin-bottom:4px;}
-.kid-banner .kb-text p{margin:0; font-size:13px; opacity:0.92; max-width:420px;}
-.kid-banner .kb-illust{flex-shrink:0; width:120px; height:90px;}
-@media (max-width:700px){ .kid-banner{flex-direction:column; text-align:center;} .kid-banner .kb-illust{width:90px;height:70px;} }
-
-.nav-item{display:flex; align-items:center; gap:10px; padding:11px 12px; border-radius:9px; cursor:pointer; font-size:13.5px; font-weight:600; color:rgba(248,241,228,.65); margin-bottom:3px;}
-.nav-item:hover{background:rgba(248,241,228,.06);}
-.nav-item.on{background:rgba(172,138,52,.22); color:var(--brass-100);}
+.nav-item{display:flex; align-items:center; gap:10px; padding:11px 12px; border-radius:9px; cursor:pointer; font-size:13.5px; font-weight:600; color:rgba(255,255,255,.7); margin-bottom:3px;}
+.nav-item:hover{background:rgba(255,255,255,.08);}
+.nav-item.on{background:rgba(255,255,255,.18); color:#fff;}
 
 .view{display:none; animation:fade .3s ease;}
 .view.on{display:block;}
@@ -94,20 +94,12 @@ input[type=text],input[type=email],input[type=password],input[type=date],select,
 
 .metrics{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:22px;}
 @media (max-width:900px){.metrics{grid-template-columns:1fr 1fr;}}
+.metric{background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-sm); padding:15px 17px;}
+.metric .lbl{font-size:11.5px; color:var(--muted); margin-bottom:6px;}
+.metric .val{font-family:'Baloo 2',sans-serif; font-size:22px; color:var(--teal-900);}
 
 .two-col-dash{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
 @media (max-width:800px){.two-col-dash{grid-template-columns:1fr;}}
-
-@media (max-width:820px){
-  .app-shell{flex-direction:column;}
-  .app-sidebar{width:100%; height:auto; position:relative; display:flex; align-items:center; gap:6px; overflow-x:auto; padding:14px 16px;}
-  .app-sidebar .brand,.app-sidebar .tag{display:none;}
-  .app-content{padding:22px 18px 50px;}
-  .app-topbar{padding:14px 18px;}
-}
-.metric{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-sm); padding:15px 17px;}
-.metric .lbl{font-size:11.5px; color:var(--muted); margin-bottom:6px;}
-.metric .val{font-family:'Baloo 2',sans-serif; font-size:22px; color:var(--teal-900);}
 
 .card{background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md); padding:16px 18px; margin-bottom:14px;}
 .card h4{font-size:12.5px; font-weight:700; margin:0 0 10px; color:var(--teal-900);}
@@ -126,33 +118,68 @@ tr:last-child td{border-bottom:none;}
 
 .pill-filter{display:flex; gap:6px; margin-bottom:16px;}
 .pill-filter button{font-size:11.5px; font-weight:700; border-radius:999px; border:1px solid var(--line); background:var(--paper-raised); padding:7px 15px; cursor:pointer; color:var(--ink-soft);}
-.pill-filter button.on{background:var(--teal-900); color:var(--paper-raised); border-color:var(--teal-900);}
+.pill-filter button.on{background:var(--teal-900); color:#fff; border-color:var(--teal-900);}
 
 .segbtns{display:flex; gap:6px;}
 .segbtns button{font-size:11px; font-weight:600; border-radius:999px; border:1px solid var(--line); background:var(--paper-raised); padding:6px 12px; cursor:pointer; color:var(--ink-soft);}
 .segbtns button.on{background:var(--sage-100); color:var(--sage); border-color:var(--sage-100);}
 
 .feetag{font-size:10.5px; font-weight:700; padding:3px 9px; border-radius:999px; background:var(--brass-100); color:var(--brass);}
-.wa-btn{display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; padding:6px 12px; border-radius:999px; border:1px solid var(--sage-100); background:var(--sage-100); color:var(--sage); cursor:pointer;}
+.wa-btn{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700; padding:8px 14px; border-radius:999px; border:1px solid var(--sage-100); background:var(--sage-100); color:var(--sage); cursor:pointer;}
 .wa-icon-btn{width:28px; height:28px; border-radius:50%; background:var(--sage-100); color:var(--sage); border:none; cursor:pointer; display:inline-flex; align-items:center; justify-content:center;}
 .wa-icon-btn svg{width:14px;height:14px;}
+.edit-icon-btn{width:28px; height:28px; border-radius:50%; background:var(--teal-100); color:var(--teal-900); border:none; cursor:pointer; display:inline-flex; align-items:center; justify-content:center;}
+.edit-icon-btn svg{width:14px;height:14px;}
 .gform-btn{display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:700; padding:9px 16px; border-radius:999px; border:1px solid var(--brass-100); background:var(--brass-100); color:var(--brass); cursor:pointer;}
 
-.toast{position:fixed; bottom:26px; left:50%; transform:translateX(-50%) translateY(16px); background:var(--teal-900); color:var(--paper-raised);
+.toast{position:fixed; bottom:26px; left:50%; transform:translateX(-50%) translateY(16px); background:var(--teal-900); color:#fff;
   padding:13px 22px; border-radius:999px; font-size:13px; font-weight:600; box-shadow:var(--shadow-frame); opacity:0; pointer-events:none;
   transition:opacity .3s,transform .3s; z-index:999; max-width:90vw; text-align:center;}
 .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
 
-.greeting{background:var(--teal-700); color:var(--brass-100); border-radius:var(--radius-md); padding:20px 24px; margin-bottom:18px;}
+.greeting{background:var(--teal-700); color:#fff; border-radius:var(--radius-md); padding:20px 24px; margin-bottom:18px;}
 .greeting .hi{font-size:13px; opacity:.85; margin-bottom:4px;}
 .greeting .name{font-family:'Baloo 2',sans-serif; font-size:21px; margin-bottom:6px;}
 .greeting .sub2{font-size:12.5px; opacity:.85;}
 
 .loading{color:var(--muted); font-size:13px; padding:20px 0; text-align:center;}
 
-.modal-overlay{position:fixed; inset:0; background:rgba(10,15,13,.55); display:flex; align-items:center; justify-content:center; z-index:300; padding:20px;}
-.modal-box{background:var(--paper-raised); border-radius:var(--radius-md); padding:26px 28px; max-width:520px; width:100%; max-height:88vh; overflow-y:auto;}
+.modal-overlay{position:fixed; inset:0; background:rgba(30,20,10,.55); display:flex; align-items:center; justify-content:center; z-index:300; padding:20px;}
+.modal-box{background:var(--paper-raised); border-radius:var(--radius-md); padding:26px 28px; max-width:540px; width:100%; max-height:88vh; overflow-y:auto;}
 .modal-box textarea{font-family:'Courier New', monospace; font-size:12px;}
+.field-row2{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+
+.kid-banner{
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  background:linear-gradient(135deg, var(--teal-700), var(--teal-500));
+  border-radius:var(--radius-lg); padding:22px 28px; margin-bottom:22px; overflow:hidden; position:relative; color:#fff;
+}
+.kid-banner .kb-text h2{color:#fff; font-size:22px; margin-bottom:4px;}
+.kid-banner .kb-text p{margin:0; font-size:13px; opacity:0.92; max-width:420px;}
+.kid-banner .kb-illust{flex-shrink:0; width:120px; height:90px;}
+@media (max-width:700px){ .kid-banner{flex-direction:column; text-align:center;} .kid-banner .kb-illust{width:90px;height:70px;} }
+
+/* ===== GALERI DOKUMENTASI ===== */
+.galeri-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px;}
+.galeri-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden;}
+.galeri-media{width:100%; aspect-ratio:4/3; background:var(--teal-100); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative;}
+.galeri-media img, .galeri-media video{width:100%; height:100%; object-fit:cover;}
+.galeri-media .play-badge{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.15);}
+.galeri-body{padding:12px 14px;}
+.galeri-body .g-title{font-size:13px; font-weight:700; margin:0 0 3px;}
+.galeri-body .g-meta{font-size:11px; color:var(--muted); margin:0 0 6px;}
+.galeri-body .g-ket{font-size:12px; color:var(--ink-soft); margin:0;}
+
+@media (max-width:820px){
+  .modal-box{padding:20px;}
+  .field-row2{grid-template-columns:1fr;}
+  .app-shell{flex-direction:column;}
+  .app-sidebar{width:100%; height:auto; position:relative; display:flex; align-items:center; gap:6px; overflow-x:auto; padding:14px 16px;}
+  .app-sidebar .brand,.app-sidebar .tag{display:none;}
+  .app-content{padding:22px 18px 50px;}
+  .app-topbar{padding:14px 18px;}
+  .page-title h2{font-size:18px;}
+}
 
 </style>
 </head>
@@ -169,10 +196,9 @@ tr:last-child td{border-bottom:none;}
     <p id="mastheadSub">Dua program terpisah — pilih dahulu program yang ingin diakses.</p>
   </header>
 
-  <!-- LANDING: PILIH PROGRAM -->
   <div id="screenLanding">
     <div class="landing-hero">
-      <svg viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:220px; max-width:70%; height:auto;">
+      <svg viewBox="0 0 200 90" fill="none" xmlns="rh15c.github.io/logo.png" style="width:220px; max-width:70%; height:auto;">
         <circle cx="34" cy="24" r="16" fill="#FFC93C"/>
         <g stroke="#FFC93C" stroke-width="3" stroke-linecap="round"><line x1="34" y1="2" x2="34" y2="8"/><line x1="52" y1="10" x2="48" y2="14"/><line x1="16" y1="10" x2="20" y2="14"/></g>
         <ellipse cx="150" cy="28" rx="22" ry="12" fill="#fff"/><ellipse cx="168" cy="24" rx="16" ry="10" fill="#fff"/>
@@ -187,16 +213,22 @@ tr:last-child td{border-bottom:none;}
     <div class="landing-grid">
       <div class="program-card" onclick="pilihProgram('KB')">
         <h3>Kelompok Bermain (KB)</h3>
-        <p>Pendidikan usia dini — hafalan, motorik, dan pembentukan akhlak.</p>
+        <p>Pendidikan usia dini setengah hari — hafalan, motorik, dan pembentukan akhlak.</p>
       </div>
       <div class="program-card" onclick="pilihProgram('TPA')">
         <h3>Taman Penitipan Anak (TPA)</h3>
-        <p>Layanan penitipan anak dengan jam fleksibel.</p>
+        <p>Layanan penitipan harian dengan jam fleksibel dan biaya kelebihan jam otomatis.</p>
+      </div>
+    </div>
+
+    <div class="kalender-landing">
+      <h3>📅 Kalender Kegiatan Tahun Ajaran 2026/2027</h3>
+      <div class="kalender-timeline" id="kalenderLandingArea">
+        <div class="loading">Memuat kalender...</div>
       </div>
     </div>
   </div>
 
-  <!-- LOGIN -->
   <div id="screenLogin" class="hidden">
     <div class="login-box">
       <span class="back-link" onclick="kembaliKeLanding()">&larr; Ganti program</span>
@@ -215,6 +247,7 @@ tr:last-child td{border-bottom:none;}
       </form>
       <p class="hint">
         Akun contoh — Admin: admin@salsabila.sch.id / admin123<br>
+        Super Admin: superadmin@salsabila.sch.id / super123<br>
         Guru KB: nia@salsabila.sch.id / guru123 &middot; Guru TPA: yusuf@salsabila.sch.id / guru123<br>
         Ortu KB: aisyah@gmail.com / ortu123 &middot; Ortu TPA: ratna@gmail.com / ortu123
       </p>
@@ -223,7 +256,6 @@ tr:last-child td{border-bottom:none;}
 
 </div>
 
-<!-- APLIKASI: FULL DESKTOP PAGE, di luar .wrap agar memakai lebar penuh layar -->
 <div id="screenApp" class="app-shell hidden">
   <aside class="app-sidebar" id="sidebar"></aside>
   <div class="app-main">
@@ -237,41 +269,66 @@ tr:last-child td{border-bottom:none;}
 
 <script>
 // ============================================================
-// MOCK API — mockup standalone, tanpa server/database sungguhan.
+// MOCK API — mockup standalone versi terbaru, tanpa server/database sungguhan.
 // Seluruh logika tampilan (renderXxx) SAMA PERSIS dengan aplikasi asli;
 // hanya bagian pengambilan data ini yang diganti data contoh statis.
 // ============================================================
 
-const BIAYA_PER_JAM_MOCK = 15000;
+const PLACEHOLDER_FOTO = "data:image/svg+xml;utf8," + encodeURIComponent(`
+<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'>
+  <rect width='400' height='300' fill='%23E3F4FF'/>
+  <circle cx='120' cy='110' r='40' fill='%23FFC93C'/>
+  <rect x='60' y='170' width='280' height='90' fill='%235CC2FF'/>
+  <polygon points='60,170 200,90 340,170' fill='%232F9BE0'/>
+</svg>`.replace(/#/g, '%23'));
 
 const mockDB = {
   kelas: [
-    { id: 1, nama: 'KB-A', program_id: 1, program_kode: 'KB', kapasitas: 20 },
-    { id: 2, nama: 'KB-B', program_id: 1, program_kode: 'KB', kapasitas: 20 },
-    { id: 3, nama: 'TPA-A', program_id: 2, program_kode: 'TPA', kapasitas: 25 },
-    { id: 4, nama: 'TPA-B', program_id: 2, program_kode: 'TPA', kapasitas: 25 },
+    { id: 1, nama: 'KB-A', program_id: 1, program_kode: 'KB', kapasitas: 20, tahun_ajaran: '2026/2027' },
+    { id: 2, nama: 'KB-B', program_id: 1, program_kode: 'KB', kapasitas: 20, tahun_ajaran: '2026/2027' },
+    { id: 3, nama: 'TPA-A', program_id: 2, program_kode: 'TPA', kapasitas: 25, tahun_ajaran: '2026/2027' },
+    { id: 4, nama: 'TPA-B', program_id: 2, program_kode: 'TPA', kapasitas: 25, tahun_ajaran: '2026/2027' },
   ],
   siswa: [
-    { id: 1, nama: 'Muhammad Fatih', kelas_id: 2, kelas_nama: 'KB-B', program_id: 1, program_kode: 'KB', orang_tua_id: 1, orang_tua_nama: 'Bunda Aisyah', orang_tua_hp: '081211110001', status: 'aktif', tanggal_lahir: '2022-03-14' },
-    { id: 2, nama: 'Yusuf Al-Fatih', kelas_id: 1, kelas_nama: 'KB-A', program_id: 1, program_kode: 'KB', orang_tua_id: 3, orang_tua_nama: 'Ayah Hendra', orang_tua_hp: '081211110003', status: 'aktif', tanggal_lahir: '2022-06-02' },
-    { id: 3, nama: 'Khadijah Az-Zahra', kelas_id: 3, kelas_nama: 'TPA-A', program_id: 2, program_kode: 'TPA', orang_tua_id: 2, orang_tua_nama: 'Bunda Ratna', orang_tua_hp: '081211110002', status: 'aktif', tanggal_lahir: '2021-11-20' },
-    { id: 4, nama: 'Hafizah Nur', kelas_id: 4, kelas_nama: 'TPA-B', program_id: 2, program_kode: 'TPA', orang_tua_id: 4, orang_tua_nama: 'Bunda Wulan', orang_tua_hp: '081211110004', status: 'aktif', tanggal_lahir: '2021-09-08' },
+    { id: 1, nama: 'Muhammad Fatih', kelas_id: 2, kelas_nama: 'KB-B', program_id: 1, program_kode: 'KB', orang_tua_id: 1, orang_tua_nama: 'Bunda Aisyah', orang_tua_hp: '081211110001', status: 'aktif', tanggal_lahir: '2022-03-14', tahun_ajaran: '2026/2027', spp_pokok: 300000, biaya_per_jam_lebih: 15000 },
+    { id: 2, nama: 'Yusuf Al-Fatih', kelas_id: 1, kelas_nama: 'KB-A', program_id: 1, program_kode: 'KB', orang_tua_id: 3, orang_tua_nama: 'Ayah Hendra', orang_tua_hp: '081211110003', status: 'aktif', tanggal_lahir: '2022-06-02', tahun_ajaran: '2026/2027', spp_pokok: 275000, biaya_per_jam_lebih: 15000 },
+    { id: 3, nama: 'Khadijah Az-Zahra', kelas_id: 3, kelas_nama: 'TPA-A', program_id: 2, program_kode: 'TPA', orang_tua_id: 2, orang_tua_nama: 'Bunda Ratna', orang_tua_hp: '081211110002', status: 'aktif', tanggal_lahir: '2021-11-20', tahun_ajaran: '2026/2027', spp_pokok: 350000, biaya_per_jam_lebih: 20000 },
+    { id: 4, nama: 'Hafizah Nur', kelas_id: 4, kelas_nama: 'TPA-B', program_id: 2, program_kode: 'TPA', orang_tua_id: 4, orang_tua_nama: 'Bunda Wulan', orang_tua_hp: '081211110004', status: 'aktif', tanggal_lahir: '2021-09-08', tahun_ajaran: '2026/2027', spp_pokok: 350000, biaya_per_jam_lebih: 20000 },
   ],
   absensi: [
-    { id: 1, siswa_id: 1, tanggal: '2026-09-08', status: 'hadir', jam_pulang_kategori: 'plus_1_jam', biaya_kelebihan_jam: BIAYA_PER_JAM_MOCK },
-    { id: 2, siswa_id: 2, tanggal: '2026-09-08', status: 'hadir', jam_pulang_kategori: 'plus_2_jam', biaya_kelebihan_jam: BIAYA_PER_JAM_MOCK * 2 },
+    { id: 1, siswa_id: 1, tanggal: '2026-09-08', status: 'hadir', jam_pulang_kategori: 'plus_1_jam', biaya_kelebihan_jam: 15000 },
+    { id: 2, siswa_id: 2, tanggal: '2026-09-08', status: 'hadir', jam_pulang_kategori: 'plus_2_jam', biaya_kelebihan_jam: 30000 },
     { id: 3, siswa_id: 3, tanggal: '2026-09-08', status: 'hadir', jam_pulang_kategori: 'tepat_waktu', biaya_kelebihan_jam: 0 },
     { id: 4, siswa_id: 4, tanggal: '2026-09-08', status: 'sakit', jam_pulang_kategori: 'tepat_waktu', biaya_kelebihan_jam: 0 },
   ],
   tagihan: [
-    { id: 1, siswa_id: 1, periode: '2026-09', total: 365000, status: 'belum_bayar', jatuh_tempo: '2026-09-10', items: [{ nama: 'SPP bulanan', nominal: 300000 }, { nama: 'Ekstrakurikuler', nominal: 50000 }, { nama: 'Kelebihan jam jemput (2026-09-08)', nominal: 15000 }] },
-    { id: 2, siswa_id: 2, periode: '2026-09', total: 380000, status: 'lunas', jatuh_tempo: '2026-09-10', items: [{ nama: 'SPP bulanan', nominal: 300000 }, { nama: 'Ekstrakurikuler', nominal: 50000 }, { nama: 'Kelebihan jam jemput (2026-09-08)', nominal: 30000 }] },
-    { id: 3, siswa_id: 3, periode: '2026-09', total: 300000, status: 'lunas', jatuh_tempo: '2026-09-10', items: [{ nama: 'SPP bulanan', nominal: 300000 }] },
-    { id: 4, siswa_id: 4, periode: '2026-09', total: 300000, status: 'belum_bayar', jatuh_tempo: '2026-09-10', items: [{ nama: 'SPP bulanan', nominal: 300000 }] },
+    { id: 1, siswa_id: 1, periode: '2026-09', total: 365000, status: 'belum_bayar', jatuh_tempo: '2026-09-10', items: [{ id: 1, nama: 'SPP bulanan', nominal: 300000 }, { id: 2, nama: 'Ekstrakurikuler', nominal: 50000 }, { id: 3, nama: 'Kelebihan jam jemput (2026-09-08)', nominal: 15000 }] },
+    { id: 2, siswa_id: 2, periode: '2026-09', total: 355000, status: 'lunas', jatuh_tempo: '2026-09-10', items: [{ id: 4, nama: 'SPP bulanan', nominal: 275000 }, { id: 5, nama: 'Ekstrakurikuler', nominal: 50000 }, { id: 6, nama: 'Kelebihan jam jemput (2026-09-08)', nominal: 30000 }] },
+    { id: 3, siswa_id: 3, periode: '2026-09', total: 350000, status: 'lunas', jatuh_tempo: '2026-09-10', items: [{ id: 7, nama: 'SPP bulanan', nominal: 350000 }] },
+    { id: 4, siswa_id: 4, periode: '2026-09', total: 350000, status: 'belum_bayar', jatuh_tempo: '2026-09-10', items: [{ id: 8, nama: 'SPP bulanan', nominal: 350000 }] },
   ],
   laporan: [
     { siswa_id: 1, tanggal: '2026-09-08', hafalan_materi: 'QS. An-Nas', hafalan_status: 'lancar', catatan_untuk_orangtua: "Fatih hari ini semangat belajar wudhu, mashaAllah." },
     { siswa_id: 3, tanggal: '2026-09-08', hafalan_materi: 'Doa sebelum makan', hafalan_status: 'lancar', catatan_untuk_orangtua: 'Khadijah sudah hafal doa sebelum makan dengan lancar.' },
+  ],
+  dokumentasi: [
+    { id: 1, kelas_id: 2, kelas_nama: 'KB-B', program_kode: 'KB', guru_id: 1, guru_nama: 'Ustadzah Nia', tanggal: '2026-09-08', judul: 'Praktik wudhu bersama', tipe: 'video', file_path: null, url_eksternal: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', keterangan: 'Dokumentasi kegiatan praktik wudhu sederhana di kelas KB-B.' },
+    { id: 2, kelas_id: 3, kelas_nama: 'TPA-A', program_kode: 'TPA', guru_id: 3, guru_nama: 'Ustadz Yusuf', tanggal: '2026-09-08', judul: 'Kegiatan bermain sensori', tipe: 'foto', file_path: PLACEHOLDER_FOTO, url_eksternal: null, keterangan: 'Anak-anak TPA-A bermain pasir kinetik untuk melatih motorik halus.' },
+  ],
+  kalenderAkademik: [
+    { tanggal_mulai: '2026-07-13', tanggal_selesai: '2026-07-13', judul: 'Hari pertama masuk sekolah', kategori: 'semester' },
+    { tanggal_mulai: '2026-07-13', tanggal_selesai: '2026-07-18', judul: 'Masa pengenalan lingkungan sekolah (MPLS)', kategori: 'kegiatan' },
+    { tanggal_mulai: '2026-08-17', tanggal_selesai: '2026-08-17', judul: 'Libur Hari Kemerdekaan RI', kategori: 'libur' },
+    { tanggal_mulai: '2026-09-08', tanggal_selesai: '2026-09-08', judul: 'Setoran hafalan mingguan seluruh kelas', kategori: 'kegiatan' },
+    { tanggal_mulai: '2026-10-05', tanggal_selesai: '2026-10-05', judul: 'Kunjungan edukasi ke pemadam kebakaran', kategori: 'kegiatan' },
+    { tanggal_mulai: '2026-12-14', tanggal_selesai: '2026-12-18', judul: 'Pekan penilaian akhir semester ganjil', kategori: 'semester' },
+    { tanggal_mulai: '2026-12-21', tanggal_selesai: '2027-01-02', judul: 'Libur akhir semester ganjil', kategori: 'libur' },
+    { tanggal_mulai: '2027-01-04', tanggal_selesai: '2027-01-04', judul: 'Hari pertama semester genap', kategori: 'semester' },
+    { tanggal_mulai: '2027-01-15', tanggal_selesai: '2027-03-15', judul: 'Pendaftaran peserta didik baru (PPDB) 2027/2028', kategori: 'ppdb' },
+    { tanggal_mulai: '2027-03-20', tanggal_selesai: '2027-03-21', judul: 'Perkiraan libur Idul Fitri (menyesuaikan penetapan pemerintah)', kategori: 'libur' },
+    { tanggal_mulai: '2027-05-10', tanggal_selesai: '2027-05-14', judul: 'Pekan penilaian akhir tahun ajaran', kategori: 'semester' },
+    { tanggal_mulai: '2027-06-12', tanggal_selesai: '2027-06-12', judul: 'Pentas seni & penyerahan rapor akhir tahun', kategori: 'kegiatan' },
+    { tanggal_mulai: '2027-06-15', tanggal_selesai: '2027-07-10', judul: 'Libur akhir tahun ajaran', kategori: 'libur' },
   ],
   users: {
     admin: [
@@ -293,6 +350,8 @@ const mockDB = {
 };
 
 function sleepMock(ms) { return new Promise(r => setTimeout(r, ms)); }
+function nextId(arr) { return arr.length ? Math.max(...arr.map(x => x.id)) + 1 : 1; }
+function fileToDataUrl(file) { return new Promise((resolve, reject) => { const r = new FileReader(); r.onload = () => resolve(r.result); r.onerror = reject; r.readAsDataURL(file); }); }
 
 function dashboardOrtuUntukMock(orangTuaId) {
   const anak = mockDB.siswa.filter(s => s.orang_tua_id === orangTuaId);
@@ -303,27 +362,26 @@ function dashboardOrtuUntukMock(orangTuaId) {
   });
 }
 
-function nextId(arr) { return arr.length ? Math.max(...arr.map(x => x.id)) + 1 : 1; }
-
 // ============ API HELPER (VERSI MOCK) ============
 async function api(path, opts = {}) {
-  await sleepMock(180); // sedikit jeda supaya terasa seperti memanggil server sungguhan
+  await sleepMock(180);
   const method = (opts.method || 'GET').toUpperCase();
-  const body = opts.body ? JSON.parse(opts.body) : {};
+  const isFormData = opts.body instanceof FormData;
+  const body = (!isFormData && opts.body) ? JSON.parse(opts.body) : {};
   const [base, qs] = path.split('?');
   const params = new URLSearchParams(qs || '');
+  let m;
 
   // ---- AUTH ----
   if (base === '/auth/login' && method === 'POST') {
-    const { email, password, role } = body;
-    const table = mockDB.users[role] || [];
-    const user = table.find(u => u.email === email && u.password === password);
+    const table = mockDB.users[body.role] || [];
+    const user = table.find(u => u.email === body.email && u.password === body.password);
     if (!user) throw new Error('Email atau kata sandi salah.');
     let extra = {};
-    if (role === 'guru') extra = { kelas: mockDB.kelas.find(k => k.id === user.kelas_id) };
-    if (role === 'ortu') extra = { anak: mockDB.siswa.filter(s => s.orang_tua_id === user.id) };
-    if (role === 'admin') extra = { is_super_admin: !!user.is_super_admin };
-    return { token: 'mock-token', user: { id: user.id, nama: user.nama, email: user.email, role, ...extra } };
+    if (body.role === 'guru') extra = { kelas: mockDB.kelas.find(k => k.id === user.kelas_id) };
+    if (body.role === 'ortu') extra = { anak: mockDB.siswa.filter(s => s.orang_tua_id === user.id) };
+    if (body.role === 'admin') extra = { is_super_admin: !!user.is_super_admin };
+    return { token: 'mock-token', user: { id: user.id, nama: user.nama, email: user.email, role: body.role, ...extra } };
   }
 
   // ---- KELAS ----
@@ -355,22 +413,33 @@ async function api(path, opts = {}) {
     let orangTuaId = null, ortuBaru = false;
     if (body.orang_tua_email) {
       const existing = mockDB.users.ortu.find(o => o.email === body.orang_tua_email);
-      if (existing) { orangTuaId = existing.id; }
-      else {
-        orangTuaId = nextId(mockDB.users.ortu);
-        mockDB.users.ortu.push({ id: orangTuaId, nama: body.orang_tua_nama || body.orang_tua_email, email: body.orang_tua_email, password: 'ortu123', no_hp: body.orang_tua_no_hp || null });
-        ortuBaru = true;
-      }
+      if (existing) orangTuaId = existing.id;
+      else { orangTuaId = nextId(mockDB.users.ortu); mockDB.users.ortu.push({ id: orangTuaId, nama: body.orang_tua_nama || body.orang_tua_email, email: body.orang_tua_email, password: 'ortu123', no_hp: body.orang_tua_no_hp || null }); ortuBaru = true; }
     }
     const ortu = mockDB.users.ortu.find(o => o.id === orangTuaId);
     const id = nextId(mockDB.siswa);
-    mockDB.siswa.push({ id, nama: body.nama, kelas_id: kelas.id, kelas_nama: kelas.nama, program_id: kelas.program_id, program_kode: kelas.program_kode, orang_tua_id: orangTuaId, orang_tua_nama: ortu ? ortu.nama : null, orang_tua_hp: ortu ? ortu.no_hp : null, status: 'aktif', tanggal_lahir: body.tanggal_lahir || null });
+    mockDB.siswa.push({ id, nama: body.nama, kelas_id: kelas.id, kelas_nama: kelas.nama, program_id: kelas.program_id, program_kode: kelas.program_kode, orang_tua_id: orangTuaId, orang_tua_nama: ortu ? ortu.nama : null, orang_tua_hp: ortu ? ortu.no_hp : null, status: 'aktif', tanggal_lahir: body.tanggal_lahir || null, tahun_ajaran: body.tahun_ajaran || kelas.tahun_ajaran || '2026/2027', spp_pokok: body.spp_pokok || 300000, biaya_per_jam_lebih: body.biaya_per_jam_lebih || 15000 });
     return { ok: true, id, pesan: `Siswa "${body.nama}" berhasil ditambahkan.` + (ortuBaru ? ' Akun orang tua baru dibuat (password default: ortu123).' : '') };
   }
 
+  m = base.match(/^\/siswa\/(\d+)$/);
+  if (m && method === 'PUT') {
+    const s = mockDB.siswa.find(s => s.id === Number(m[1]));
+    if (!s) throw new Error('Siswa tidak ditemukan.');
+    if (body.kelas_id !== undefined) {
+      const kelas = mockDB.kelas.find(k => k.id === Number(body.kelas_id));
+      if (kelas) { s.kelas_id = kelas.id; s.kelas_nama = kelas.nama; s.program_id = kelas.program_id; s.program_kode = kelas.program_kode; }
+    }
+    if (body.nama !== undefined) s.nama = body.nama;
+    if (body.tahun_ajaran !== undefined) s.tahun_ajaran = body.tahun_ajaran;
+    if (body.status !== undefined) s.status = body.status;
+    if (body.spp_pokok !== undefined) s.spp_pokok = Number(body.spp_pokok);
+    if (body.biaya_per_jam_lebih !== undefined) s.biaya_per_jam_lebih = Number(body.biaya_per_jam_lebih);
+    return { ok: true, pesan: `Data "${s.nama}" berhasil diperbarui.` };
+  }
+
   if (base === '/siswa/bulk' && method === 'POST') {
-    const rows = body.rows || [];
-    let berhasil = 0; const gagal = [];
+    const rows = body.rows || []; let berhasil = 0; const gagal = [];
     rows.forEach((row, idx) => {
       try {
         if (!row.nama || !row.kelas_nama) throw new Error('Nama dan kelas wajib diisi');
@@ -383,7 +452,7 @@ async function api(path, opts = {}) {
           else { orangTuaId = nextId(mockDB.users.ortu); mockDB.users.ortu.push({ id: orangTuaId, nama: row.orang_tua_nama || row.orang_tua_email, email: row.orang_tua_email, password: 'ortu123', no_hp: row.orang_tua_no_hp || null }); }
         }
         const ortu = mockDB.users.ortu.find(o => o.id === orangTuaId);
-        mockDB.siswa.push({ id: nextId(mockDB.siswa), nama: row.nama.trim(), kelas_id: kelas.id, kelas_nama: kelas.nama, program_id: kelas.program_id, program_kode: kelas.program_kode, orang_tua_id: orangTuaId, orang_tua_nama: ortu ? ortu.nama : null, orang_tua_hp: ortu ? ortu.no_hp : null, status: 'aktif', tanggal_lahir: row.tanggal_lahir || null });
+        mockDB.siswa.push({ id: nextId(mockDB.siswa), nama: row.nama.trim(), kelas_id: kelas.id, kelas_nama: kelas.nama, program_id: kelas.program_id, program_kode: kelas.program_kode, orang_tua_id: orangTuaId, orang_tua_nama: ortu ? ortu.nama : null, orang_tua_hp: ortu ? ortu.no_hp : null, status: 'aktif', tanggal_lahir: row.tanggal_lahir || null, tahun_ajaran: row.tahun_ajaran || kelas.tahun_ajaran || '2026/2027', spp_pokok: row.spp_pokok || 300000, biaya_per_jam_lebih: row.biaya_per_jam_lebih || 15000 });
         berhasil++;
       } catch (e) { gagal.push({ baris: idx + 1, nama: row.nama || '(tanpa nama)', error: e.message }); }
     });
@@ -393,8 +462,7 @@ async function api(path, opts = {}) {
   // ---- ABSENSI ----
   if (base === '/absensi' && method === 'GET') {
     let list = mockDB.absensi.map(a => { const s = mockDB.siswa.find(s => s.id === a.siswa_id); return { ...a, siswa_nama: s ? s.nama : '' }; });
-    const tanggal = params.get('tanggal');
-    const kelasId = params.get('kelas_id');
+    const tanggal = params.get('tanggal'); const kelasId = params.get('kelas_id');
     if (tanggal) list = list.filter(a => a.tanggal === tanggal);
     if (kelasId) list = list.filter(a => { const s = mockDB.siswa.find(s => s.id === a.siswa_id); return s && String(s.kelas_id) === String(kelasId); });
     return list;
@@ -402,23 +470,26 @@ async function api(path, opts = {}) {
 
   if (base === '/absensi' && method === 'POST') {
     const { siswa_id, tanggal, status, jam_pulang_kategori = 'tepat_waktu' } = body;
-    const NOMINAL = { tepat_waktu: 0, plus_1_jam: BIAYA_PER_JAM_MOCK, plus_2_jam: BIAYA_PER_JAM_MOCK * 2 };
+    const siswa = mockDB.siswa.find(s => s.id === Number(siswa_id));
+    if (!siswa) throw new Error('Siswa tidak ditemukan.');
+    const tarif = siswa.biaya_per_jam_lebih;
+    const NOMINAL = { tepat_waktu: 0, plus_1_jam: tarif, plus_2_jam: tarif * 2 };
     const kategoriValid = status === 'hadir' ? jam_pulang_kategori : 'tepat_waktu';
     const biaya = status === 'hadir' ? (NOMINAL[kategoriValid] || 0) : 0;
 
-    const existing = mockDB.absensi.find(a => a.siswa_id === Number(siswa_id) && a.tanggal === tanggal);
+    const existing = mockDB.absensi.find(a => a.siswa_id === siswa.id && a.tanggal === tanggal);
     if (existing) { existing.status = status; existing.jam_pulang_kategori = kategoriValid; existing.biaya_kelebihan_jam = biaya; }
-    else { mockDB.absensi.push({ id: nextId(mockDB.absensi), siswa_id: Number(siswa_id), tanggal, status, jam_pulang_kategori: kategoriValid, biaya_kelebihan_jam: biaya }); }
+    else mockDB.absensi.push({ id: nextId(mockDB.absensi), siswa_id: siswa.id, tanggal, status, jam_pulang_kategori: kategoriValid, biaya_kelebihan_jam: biaya });
 
     const periode = tanggal.slice(0, 7);
-    let tagihan = mockDB.tagihan.find(t => t.siswa_id === Number(siswa_id) && t.periode === periode);
-    if (!tagihan) { tagihan = { id: nextId(mockDB.tagihan), siswa_id: Number(siswa_id), periode, total: 0, status: 'belum_bayar', jatuh_tempo: `${periode}-10`, items: [] }; mockDB.tagihan.push(tagihan); }
+    let tagihan = mockDB.tagihan.find(t => t.siswa_id === siswa.id && t.periode === periode);
+    if (!tagihan) { tagihan = { id: nextId(mockDB.tagihan), siswa_id: siswa.id, periode, total: siswa.spp_pokok, status: 'belum_bayar', jatuh_tempo: `${periode}-10`, items: [{ id: nextId([].concat(...mockDB.tagihan.map(t=>t.items))), nama: 'SPP bulanan', nominal: siswa.spp_pokok }] }; mockDB.tagihan.push(tagihan); }
     const label = `Kelebihan jam jemput (${tanggal})`;
     const item = tagihan.items.find(i => i.nama === label);
     if (item) { tagihan.total += (biaya - item.nominal); item.nominal = biaya; if (biaya <= 0) tagihan.items = tagihan.items.filter(i => i !== item); }
-    else if (biaya > 0) { tagihan.items.push({ nama: label, nominal: biaya }); tagihan.total += biaya; }
+    else if (biaya > 0) { tagihan.items.push({ id: nextId([].concat(...mockDB.tagihan.map(t=>t.items))), nama: label, nominal: biaya }); tagihan.total += biaya; }
 
-    return { ok: true, biaya_kelebihan_jam: biaya, pesan: biaya > 0 ? `Rp${biaya.toLocaleString('id-ID')} ditambahkan ke tagihan SPP bulan ini.` : 'Absensi tersimpan.' };
+    return { ok: true, biaya_kelebihan_jam: biaya, pesan: biaya > 0 ? `Rp${biaya.toLocaleString('id-ID')} ditambahkan ke tagihan SPP bulan ini (tarif ${siswa.nama}: Rp${tarif.toLocaleString('id-ID')}/jam).` : 'Absensi tersimpan.' };
   }
 
   // ---- TAGIHAN ----
@@ -426,16 +497,22 @@ async function api(path, opts = {}) {
     let list = mockDB.tagihan.map(t => { const s = mockDB.siswa.find(s => s.id === t.siswa_id); return { ...t, siswa_nama: s ? s.nama : '', kelas_nama: s ? s.kelas_nama : '', program_kode: s ? s.program_kode : '' }; });
     if (state.user.role === 'ortu') list = list.filter(t => { const s = mockDB.siswa.find(s => s.id === t.siswa_id); return s && s.orang_tua_id === state.user.id; });
     const program = params.get('program'); if (program) list = list.filter(t => t.program_kode === program);
-    const status = params.get('status'); if (status) list = list.filter(t => t.status === status);
     return list;
   }
 
-  let m = base.match(/^\/tagihan\/(\d+)\/bayar$/);
-  if (m && method === 'POST') {
-    const t = mockDB.tagihan.find(t => t.id === Number(m[1]));
-    if (t) t.status = 'lunas';
-    return { ok: true, pesan: 'Pembayaran berhasil disimulasikan. Integrasi payment gateway asli (Midtrans/Xendit) perlu ditambahkan untuk transaksi nyata.' };
+  m = base.match(/^\/tagihan\/item\/(\d+)$/);
+  if (m && method === 'PUT') {
+    let foundItem = null, foundTagihan = null;
+    for (const t of mockDB.tagihan) { const it = t.items.find(i => i.id === Number(m[1])); if (it) { foundItem = it; foundTagihan = t; break; } }
+    if (!foundItem) throw new Error('Komponen tagihan tidak ditemukan.');
+    const selisih = Number(body.nominal) - foundItem.nominal;
+    foundItem.nominal = Number(body.nominal);
+    foundTagihan.total += selisih;
+    return { ok: true, pesan: `Nominal "${foundItem.nama}" berhasil diperbarui menjadi Rp${Number(body.nominal).toLocaleString('id-ID')}.` };
   }
+
+  m = base.match(/^\/tagihan\/(\d+)\/bayar$/);
+  if (m && method === 'POST') { const t = mockDB.tagihan.find(t => t.id === Number(m[1])); if (t) t.status = 'lunas'; return { ok: true, pesan: 'Pembayaran berhasil disimulasikan. Integrasi payment gateway asli (Midtrans/Xendit) perlu ditambahkan untuk transaksi nyata.' }; }
 
   m = base.match(/^\/tagihan\/(\d+)\/kirim-wa$/);
   if (m && method === 'POST') {
@@ -450,63 +527,64 @@ async function api(path, opts = {}) {
     const program = params.get('program');
     const periodeTipe = params.get('periode_tipe') || 'bulan';
     const periode = params.get('periode') || (periodeTipe === 'tahun' ? '2026' : '2026-09');
-
     const siswaFiltered = mockDB.siswa.filter(s => !program || s.program_kode === program);
     const totalSiswa = siswaFiltered.filter(s => s.status === 'aktif').length;
     const hariIni = '2026-09-08';
     const hadirHariIni = mockDB.absensi.filter(a => a.tanggal === hariIni && a.status === 'hadir' && siswaFiltered.some(s => s.id === a.siswa_id)).length;
-
-    const tagihanFiltered = mockDB.tagihan.filter(t => {
-      const s = mockDB.siswa.find(s => s.id === t.siswa_id);
-      if (!s) return false;
-      if (program && s.program_kode !== program) return false;
-      return periodeTipe === 'tahun' ? t.periode.startsWith(periode) : t.periode === periode;
-    });
+    const tagihanFiltered = mockDB.tagihan.filter(t => { const s = mockDB.siswa.find(s => s.id === t.siswa_id); if (!s) return false; if (program && s.program_kode !== program) return false; return periodeTipe === 'tahun' ? t.periode.startsWith(periode) : t.periode === periode; });
     const sppTerkumpul = tagihanFiltered.filter(t => t.status === 'lunas').reduce((sum, t) => sum + t.total, 0);
     const sppTertagih = tagihanFiltered.reduce((sum, t) => sum + t.total, 0);
-    const tunggakan = tagihanFiltered.filter(t => t.status === 'belum_bayar').sort((a, b) => b.total - a.total).slice(0, 5).map(t => {
-      const s = mockDB.siswa.find(s => s.id === t.siswa_id);
-      const ortu = s ? mockDB.users.ortu.find(o => o.id === s.orang_tua_id) : null;
-      return { id: t.id, total: t.total, siswa_nama: s ? s.nama : '', kelas_nama: s ? s.kelas_nama : '', ortu_nama: ortu ? ortu.nama : '', ortu_hp: ortu ? ortu.no_hp : '' };
-    });
+    const tunggakan = tagihanFiltered.filter(t => t.status === 'belum_bayar').sort((a, b) => b.total - a.total).slice(0, 5).map(t => { const s = mockDB.siswa.find(s => s.id === t.siswa_id); const ortu = s ? mockDB.users.ortu.find(o => o.id === s.orang_tua_id) : null; return { id: t.id, total: t.total, siswa_nama: s ? s.nama : '', kelas_nama: s ? s.kelas_nama : '', ortu_nama: ortu ? ortu.nama : '', ortu_hp: ortu ? ortu.no_hp : '' }; });
     const pendaftarTerbaru = [...siswaFiltered].reverse().slice(0, 5).map(s => ({ nama: s.nama, status: s.status, kelas_nama: s.kelas_nama, program_kode: s.program_kode }));
-    const ringkasanJenjang = ['KB', 'TPA'].map(kode => ({
-      program_kode: kode,
-      total_siswa: mockDB.siswa.filter(s => s.program_kode === kode && s.status === 'aktif').length,
-      total_kelas: mockDB.kelas.filter(k => k.program_kode === kode).length,
-    }));
-
+    const ringkasanJenjang = ['KB', 'TPA'].map(kode => ({ program_kode: kode, total_siswa: mockDB.siswa.filter(s => s.program_kode === kode && s.status === 'aktif').length, total_kelas: mockDB.kelas.filter(k => k.program_kode === kode).length }));
     return { totalSiswa, hadirHariIni, sppTerkumpul, sppTertagih, tunggakan, pendaftarTerbaru, ringkasanJenjang, periode, periodeTipe };
   }
 
   if (base === '/dashboard/ortu' && method === 'GET') return dashboardOrtuUntukMock(state.user.id);
-
   m = base.match(/^\/dashboard\/ortu-preview\/(\d+)$/);
-  if (m && method === 'GET') {
-    const s = mockDB.siswa.find(s => s.id === Number(m[1]));
-    if (!s || !s.orang_tua_id) return [];
-    return dashboardOrtuUntukMock(s.orang_tua_id);
-  }
+  if (m && method === 'GET') { const s = mockDB.siswa.find(s => s.id === Number(m[1])); if (!s || !s.orang_tua_id) return []; return dashboardOrtuUntukMock(s.orang_tua_id); }
 
   // ---- NOTIFIKASI ----
-  if (base === '/notifikasi/wa' && method === 'POST') {
-    return { ok: true, pesan: `Pesan tersimulasi terkirim ke ${body.tujuan}.`, catatan: 'Belum terhubung ke WhatsApp Business API asli — perlu API key dari provider resmi untuk pengiriman nyata.' };
+  if (base === '/notifikasi/wa' && method === 'POST') return { ok: true, pesan: `Pesan tersimulasi terkirim ke ${body.tujuan}.`, catatan: 'Belum terhubung ke WhatsApp Business API asli.' };
+  if (base === '/notifikasi/google-form' && method === 'POST') return { ok: true, pesan: 'Laporan bulanan tersimulasi berhasil dikirim ke Google Form.' };
+
+  // ---- DOKUMENTASI ----
+  if (base === '/dokumentasi' && method === 'GET') {
+    let list = mockDB.dokumentasi.map(d => ({ ...d }));
+    const program = params.get('program');
+    if (state.user.role === 'guru') { const guru = mockDB.users.guru.find(g => g.id === state.user.id); list = list.filter(d => d.kelas_id === guru.kelas_id); }
+    else if (state.user.role === 'ortu') { const kelasIds = mockDB.siswa.filter(s => s.orang_tua_id === state.user.id).map(s => s.kelas_id); list = list.filter(d => kelasIds.includes(d.kelas_id)); }
+    else if (program) { list = list.filter(d => d.program_kode === program); }
+    return list.sort((a, b) => b.id - a.id);
   }
-  if (base === '/notifikasi/google-form' && method === 'POST') {
-    return { ok: true, pesan: 'Laporan bulanan tersimulasi berhasil dikirim ke Google Form.' };
+
+  if (base === '/dokumentasi' && method === 'POST') {
+    const fd = opts.body; // FormData asli
+    const judul = fd.get('judul'); const tipe = fd.get('tipe'); const keterangan = fd.get('keterangan'); const urlEksternal = fd.get('url_eksternal'); const file = fd.get('file');
+    if (!judul || !tipe) throw new Error('Judul dan tipe wajib diisi.');
+    if ((!file || file.size === 0) && !urlEksternal) throw new Error('Unggah file atau isi tautan video eksternal.');
+
+    let kelasIdFinal = null, guruId = null, guruNama = null;
+    if (state.user.role === 'guru') { const guru = mockDB.users.guru.find(g => g.id === state.user.id); kelasIdFinal = guru.kelas_id; guruId = guru.id; guruNama = guru.nama; }
+    else { kelasIdFinal = mockDB.kelas.find(k => k.program_kode === state.program)?.id; guruNama = state.user.nama; }
+    const kelas = mockDB.kelas.find(k => k.id === kelasIdFinal);
+
+    let filePath = null;
+    if (file && file.size > 0) filePath = await fileToDataUrl(file);
+
+    mockDB.dokumentasi.push({ id: nextId(mockDB.dokumentasi), kelas_id: kelasIdFinal, kelas_nama: kelas ? kelas.nama : '', program_kode: kelas ? kelas.program_kode : state.program, guru_id: guruId, guru_nama: guruNama, tanggal: new Date().toISOString().slice(0, 10), judul, tipe, file_path: filePath, url_eksternal: urlEksternal || null, keterangan: keterangan || null });
+    return { ok: true, pesan: `Dokumentasi "${judul}" berhasil diunggah.` };
   }
+
+  m = base.match(/^\/dokumentasi\/(\d+)$/);
+  if (m && method === 'DELETE') { mockDB.dokumentasi = mockDB.dokumentasi.filter(d => d.id !== Number(m[1])); return { ok: true, pesan: 'Dokumentasi berhasil dihapus.' }; }
 
   throw new Error('(mockup) endpoint tidak dikenali: ' + base);
 }
 
 // ---- Pratinjau invoice (pengganti PDF asli khusus di mockup ini) ----
-function lihatInvoiceMock(tagihanId) {
-  const t = mockDB.tagihan.find(t => t.id === Number(tagihanId));
-  if (!t) return;
-  const s = mockDB.siswa.find(s => s.id === t.siswa_id);
-  const win = window.open('', '_blank');
-  win.document.write(`
-    <html><head><title>Invoice SPP - ${s.nama}</title>
+function bikinInvoiceHtml(t, s) {
+  return `<html><head><title>Invoice SPP - ${s.nama}</title>
     <style>body{font-family:Arial,sans-serif;padding:40px;color:#332E28;} h1{color:#1B6FB0;font-size:20px;} table{width:100%;border-collapse:collapse;margin-top:20px;} td{padding:8px 4px;border-bottom:1px solid #eee;} .total{font-weight:bold;border-top:2px solid #1B6FB0;}</style>
     </head><body>
     <h1>Salsabila Edu — Invoice SPP</h1>
@@ -514,23 +592,27 @@ function lihatInvoiceMock(tagihanId) {
     <table>${t.items.map(i => `<tr><td>${i.nama}</td><td style="text-align:right;">Rp${i.nominal.toLocaleString('id-ID')}</td></tr>`).join('')}
     <tr class="total"><td>Total</td><td style="text-align:right;">Rp${t.total.toLocaleString('id-ID')}</td></tr></table>
     <p style="margin-top:30px; font-size:12px; color:#948A7C;">Pratinjau mockup — di versi lengkap dokumen ini dihasilkan sebagai file PDF asli.</p>
-    </body></html>
-  `);
+    </body></html>`;
+}
+function lihatInvoiceMock(tagihanId) {
+  const t = mockDB.tagihan.find(t => t.id === Number(tagihanId));
+  if (!t) return;
+  const s = mockDB.siswa.find(s => s.id === t.siswa_id);
+  const win = window.open('', '_blank');
+  win.document.write(bikinInvoiceHtml(t, s));
   win.document.close();
 }
 // ============ STATE ============
 let state = {
-  program: null,      // 'KB' | 'TPA'
-  role: 'ortu',        // 'ortu' | 'guru' | 'admin'
+  program: null,
+  role: 'ortu',
   token: localStorage.getItem('salsabila_token') || null,
   user: JSON.parse(localStorage.getItem('salsabila_user') || 'null'),
   currentView: null,
 };
 
 const PROGRAM_LABEL = { KB: 'Kelompok Bermain (KB)', TPA: 'Taman Penitipan Anak (TPA)' };
-let selectedAbsenDate = new Date().toISOString().slice(0, 10);
 
-// Ilustrasi bertema anak-anak (SVG buatan sendiri, bukan aset berhak cipta)
 const ILLUST_BANNER = `
 <svg viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <circle cx="108" cy="26" r="16" fill="#FFC93C"/>
@@ -551,16 +633,36 @@ function rupiah(n) { return 'Rp' + Number(n || 0).toLocaleString('id-ID'); }
 let toastTimer;
 function showToast(msg) {
   let t = document.getElementById('toastEl');
-  if (!t) {
-    t = document.createElement('div');
-    t.id = 'toastEl';
-    t.className = 'toast';
-    document.body.appendChild(t);
-  }
+  if (!t) { t = document.createElement('div'); t.id = 'toastEl'; t.className = 'toast'; document.body.appendChild(t); }
   t.textContent = msg;
   t.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
+}
+
+// ============ KALENDER AKADEMIK (LANDING PAGE, PUBLIK) ============
+const BULAN_ID = ['Jan','Feb','Mar','Apr','Mei','Jun','Jul','Agu','Sep','Okt','Nov','Des'];
+function formatTanggalPendek(iso) {
+  const d = new Date(iso + 'T00:00:00');
+  return `${d.getDate()} ${BULAN_ID[d.getMonth()]} ${d.getFullYear()}`;
+}
+
+async function muatKalenderLanding() {
+  const el = document.getElementById('kalenderLandingArea');
+  try {
+    await sleepMock(150);
+    const data = mockDB.kalenderAkademik;
+    if (!data.length) { el.innerHTML = '<p style="font-size:12.5px;color:var(--muted);padding:12px 0;">Kalender belum tersedia.</p>'; return; }
+    el.innerHTML = data.map(k => `
+      <div class="kal-item">
+        <div class="kal-date">${formatTanggalPendek(k.tanggal_mulai)}${k.tanggal_selesai && k.tanggal_selesai !== k.tanggal_mulai ? ' – ' + formatTanggalPendek(k.tanggal_selesai) : ''}</div>
+        <div class="kal-info">
+          <p class="kal-title">${k.judul}</p>
+          <span class="kal-badge ${k.kategori}">${k.kategori}</span>
+        </div>
+      </div>
+    `).join('');
+  } catch (e) { el.innerHTML = '<p style="font-size:12.5px;color:var(--muted);">Gagal memuat kalender.</p>'; }
 }
 
 // ============ LANDING / LOGIN FLOW ============
@@ -598,15 +700,12 @@ async function handleLogin(e) {
     localStorage.setItem('salsabila_token', state.token);
     localStorage.setItem('salsabila_user', JSON.stringify(state.user));
     masukKeAplikasi();
-  } catch (err) {
-    errEl.innerHTML = `<div class="error-msg">${err.message}</div>`;
-  }
+  } catch (err) { errEl.innerHTML = `<div class="error-msg">${err.message}</div>`; }
   return false;
 }
 
 function logout() {
-  localStorage.removeItem('salsabila_token');
-  localStorage.removeItem('salsabila_user');
+  localStorage.removeItem('salsabila_token'); localStorage.removeItem('salsabila_user');
   state.token = null; state.user = null;
   document.getElementById('screenApp').classList.add('hidden');
   document.getElementById('preAppWrap').classList.remove('hidden');
@@ -616,7 +715,6 @@ function logout() {
   document.getElementById('mastheadSub').textContent = 'Dua program terpisah — pilih dahulu program yang ingin diakses.';
 }
 
-// ============ MASUK KE APLIKASI ============
 function masukKeAplikasi() {
   document.getElementById('preAppWrap').classList.add('hidden');
   document.getElementById('screenApp').classList.remove('hidden');
@@ -624,22 +722,25 @@ function masukKeAplikasi() {
   renderSidebar();
 }
 
+// ============ NAVIGASI / SIDEBAR ============
 const NAV_BY_ROLE = {
   ortu: [
     { id: 'o-dash', label: 'Dashboard' },
     { id: 'o-bayar', label: 'Bayar SPP' },
+    { id: 'o-dok', label: 'Dokumentasi' },
   ],
   guru: [
     { id: 'g-absen', label: 'Absensi' },
     { id: 'g-siswa', label: 'Data murid' },
+    { id: 'g-dok', label: 'Dokumentasi' },
   ],
   admin: [
     { id: 'a-dash', label: 'Dashboard' },
     { id: 'a-siswa', label: 'Data siswa' },
     { id: 'a-spp', label: 'SPP' },
+    { id: 'a-dok', label: 'Dokumentasi' },
   ],
 };
-
 const NAV_SUPER_ADMIN_EXTRA = [
   { id: 's-absen', label: 'Absensi (semua kelas)' },
   { id: 's-ortu', label: 'Lihat sisi Orang Tua' },
@@ -648,9 +749,7 @@ const NAV_SUPER_ADMIN_EXTRA = [
 function renderSidebar() {
   const role = state.user.role;
   let items = NAV_BY_ROLE[role];
-  if (role === 'admin' && state.user.is_super_admin) {
-    items = [...items, ...NAV_SUPER_ADMIN_EXTRA];
-  }
+  if (role === 'admin' && state.user.is_super_admin) items = [...items, ...NAV_SUPER_ADMIN_EXTRA];
   const portalName = { ortu: 'Orang Tua', guru: 'Guru', admin: state.user.is_super_admin ? 'Super Admin' : 'Admin' }[role];
   document.getElementById('sidebar').innerHTML = `
     <p class="brand">Salsabila Edu</p>
@@ -664,9 +763,9 @@ function gotoView(id) {
   state.currentView = id;
   document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('on', n.dataset.id === id));
   const renderers = {
-    'o-dash': renderOrtuDashboard, 'o-bayar': renderOrtuBayar,
-    'g-absen': renderGuruAbsensi, 'g-siswa': renderGuruSiswa,
-    'a-dash': renderAdminDashboard, 'a-siswa': renderAdminSiswa, 'a-spp': renderAdminSpp,
+    'o-dash': renderOrtuDashboard, 'o-bayar': renderOrtuBayar, 'o-dok': renderDokumentasi,
+    'g-absen': renderGuruAbsensi, 'g-siswa': renderGuruSiswa, 'g-dok': renderDokumentasi,
+    'a-dash': renderAdminDashboard, 'a-siswa': renderAdminSiswa, 'a-spp': renderAdminSpp, 'a-dok': renderDokumentasi,
     's-absen': renderSuperAdminAbsensi, 's-ortu': renderSuperAdminOrtuPreview,
   };
   const main = document.getElementById('main');
@@ -688,7 +787,7 @@ async function renderOrtuDashboard() {
       <div class="greeting">
         <p class="hi">Assalamu'alaikum,</p>
         <p class="name">${state.user.nama}</p>
-        <p class="sub2">Ananda ${a.nama} &middot; ${a.kelas_nama}</p>
+        <p class="sub2">Ananda ${a.nama} &middot; ${a.kelas_nama} &middot; TA ${a.tahun_ajaran || '-'}</p>
       </div>
       <div class="card">
         <h4>Laporan terbaru</h4>
@@ -737,6 +836,9 @@ async function bayarTagihan(id) {
 }
 
 // ============ GURU ============
+let selectedAbsenDate = new Date().toISOString().slice(0, 10);
+const absenBuffer = {};
+
 async function renderGuruAbsensi() {
   const main = document.getElementById('main');
   const tanggalDipilih = selectedAbsenDate;
@@ -753,15 +855,13 @@ async function renderGuruAbsensi() {
     main.innerHTML = `
       <div class="page-title"><h2>Absensi &middot; ${siswaList[0]?.kelas_nama || ''}</h2></div>
       <div class="card" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
-        <div>
-          <label style="margin-bottom:4px;">Tanggal absensi</label>
-          <input type="date" id="absenDateInput" value="${tanggalDipilih}" max="${hariIniAsli}" style="margin-bottom:0; width:auto;" onchange="changeAbsenDate(this.value)">
-        </div>
-        ${!isHariIni ? `<span class="badge warn">Mengisi/mengedit tanggal lampau — cocok untuk susulan di akhir bulan</span>` : `<button class="btn btn-primary" style="padding:8px 14px;" onclick="changeAbsenDate('${hariIniAsli}')">Kembali ke hari ini</button>`}
+        <div><label style="margin-bottom:4px;">Tanggal absensi</label>
+        <input type="date" value="${tanggalDipilih}" max="${hariIniAsli}" style="margin-bottom:0; width:auto;" onchange="changeAbsenDate(this.value)"></div>
+        ${!isHariIni ? `<span class="badge warn">Mengisi/mengedit tanggal lampau</span>` : `<button class="btn btn-primary" style="width:auto;padding:8px 14px;" onclick="changeAbsenDate('${hariIniAsli}')">Kembali ke hari ini</button>`}
       </div>
-      <p style="font-size:12px; color:var(--muted); margin:-6px 0 14px;">Menampilkan absensi untuk: <strong>${tanggalTampil}</strong></p>
+      <p style="font-size:12px; color:var(--muted); margin:-6px 0 14px;">Menampilkan: <strong>${tanggalTampil}</strong></p>
       <div class="card" style="background:var(--teal-100); border:none;">
-        <p style="font-size:11.5px; color:var(--teal-900); margin:0;">Kelebihan jam jemput otomatis ditambahkan ke tagihan SPP bulan berjalan orang tua siswa, sesuai bulan dari tanggal yang dipilih di atas.</p>
+        <p style="font-size:11.5px; color:var(--teal-900); margin:0;">Kelebihan jam jemput otomatis ditambahkan ke tagihan SPP — tarif per jam berbeda tiap siswa sesuai pengaturan Admin.</p>
       </div>
       <table>
         <thead><tr><th>Siswa</th><th>Status</th><th>Jam jemput</th><th></th></tr></thead>
@@ -772,23 +872,23 @@ async function renderGuruAbsensi() {
             const kategori = ex ? ex.jam_pulang_kategori : 'tepat_waktu';
             absenBuffer[s.id] = { status, jam_pulang_kategori: kategori };
             return `
-            <tr data-siswa="${s.id}">
+            <tr>
               <td>${s.nama}</td>
               <td>
-                <div class="segbtns" data-field="status">
-                  <button data-val="hadir" class="${status === 'hadir' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','hadir',this)">Hadir</button>
-                  <button data-val="sakit" class="${status === 'sakit' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','sakit',this)">Sakit</button>
-                  <button data-val="izin" class="${status === 'izin' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','izin',this)">Izin</button>
+                <div class="segbtns">
+                  <button class="${status === 'hadir' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','hadir',this)">Hadir</button>
+                  <button class="${status === 'sakit' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','sakit',this)">Sakit</button>
+                  <button class="${status === 'izin' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','izin',this)">Izin</button>
                 </div>
               </td>
               <td>
-                <select onchange="setAbsenField(${s.id},'jam_pulang_kategori',this.value,null)" data-field="jam_pulang_kategori">
+                <select onchange="setAbsenField(${s.id},'jam_pulang_kategori',this.value,null)">
                   <option value="tepat_waktu" ${kategori === 'tepat_waktu' ? 'selected' : ''}>Dijemput tepat waktu</option>
-                  <option value="plus_1_jam" ${kategori === 'plus_1_jam' ? 'selected' : ''}>Kelebihan 1 jam (+Rp15.000)</option>
-                  <option value="plus_2_jam" ${kategori === 'plus_2_jam' ? 'selected' : ''}>Kelebihan 2 jam (+Rp30.000)</option>
+                  <option value="plus_1_jam" ${kategori === 'plus_1_jam' ? 'selected' : ''}>Kelebihan 1 jam (+${rupiah(s.biaya_per_jam_lebih)})</option>
+                  <option value="plus_2_jam" ${kategori === 'plus_2_jam' ? 'selected' : ''}>Kelebihan 2 jam (+${rupiah(s.biaya_per_jam_lebih * 2)})</option>
                 </select>
               </td>
-              <td><button class="btn btn-primary" style="padding:6px 14px;" onclick="simpanAbsensi(${s.id})">Simpan</button></td>
+              <td><button class="btn btn-primary" style="width:auto;padding:6px 14px;" onclick="simpanAbsensi(${s.id})">Simpan</button></td>
             </tr>`;
           }).join('')}
         </tbody>
@@ -797,29 +897,18 @@ async function renderGuruAbsensi() {
   } catch (err) { main.innerHTML = `<div class="error-msg">${err.message}</div>`; }
 }
 
-function changeAbsenDate(val) {
-  selectedAbsenDate = val;
-  renderGuruAbsensi();
-}
-
-const absenBuffer = {};
+function changeAbsenDate(val) { selectedAbsenDate = val; renderGuruAbsensi(); }
 function setAbsenField(siswaId, field, val, btn) {
   absenBuffer[siswaId] = absenBuffer[siswaId] || {};
   absenBuffer[siswaId][field] = val;
-  if (btn) {
-    btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
-  }
+  if (btn) { btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('on')); btn.classList.add('on'); }
 }
-
 async function simpanAbsensi(siswaId) {
   const buf = absenBuffer[siswaId] || {};
-  const status = buf.status || 'hadir';
-  const kategori = buf.jam_pulang_kategori || 'tepat_waktu';
   try {
     const res = await api('/absensi', {
       method: 'POST',
-      body: JSON.stringify({ siswa_id: siswaId, tanggal: selectedAbsenDate, status, jam_pulang_kategori: kategori }),
+      body: JSON.stringify({ siswa_id: siswaId, tanggal: selectedAbsenDate, status: buf.status || 'hadir', jam_pulang_kategori: buf.jam_pulang_kategori || 'tepat_waktu' }),
     });
     showToast(`[${selectedAbsenDate}] ` + res.pesan);
   } catch (err) { showToast(err.message); }
@@ -832,16 +921,16 @@ async function renderGuruSiswa() {
     main.innerHTML = `
       <div class="page-title"><h2>Data murid</h2></div>
       <table>
-        <thead><tr><th>Nama</th><th>Kelas</th><th>Orang tua</th><th>No. HP</th><th>Status</th></tr></thead>
+        <thead><tr><th>Nama</th><th>Kelas</th><th>Tahun Ajaran</th><th>Orang tua</th><th>No. HP</th><th>Status</th></tr></thead>
         <tbody>
-          ${siswaList.map(s => `<tr><td>${s.nama}</td><td>${s.kelas_nama}</td><td>${s.orang_tua_nama || '-'}</td><td>${s.orang_tua_hp || '-'}</td><td><span class="badge ${s.status==='aktif'?'success':'warn'}">${s.status}</span></td></tr>`).join('')}
+          ${siswaList.map(s => `<tr><td>${s.nama}</td><td>${s.kelas_nama}</td><td>${s.tahun_ajaran}</td><td>${s.orang_tua_nama || '-'}</td><td>${s.orang_tua_hp || '-'}</td><td><span class="badge ${s.status==='aktif'?'success':'warn'}">${s.status}</span></td></tr>`).join('')}
         </tbody>
       </table>
     `;
   } catch (err) { main.innerHTML = `<div class="error-msg">${err.message}</div>`; }
 }
 
-// ============ MODAL TAMBAH SISWA (SATUAN & BULK) ============
+// ============ MODAL TAMBAH SISWA (SATUAN, BULK, CSV) ============
 async function openTambahSiswaModal() {
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay';
@@ -854,57 +943,55 @@ async function openTambahSiswaModal() {
       </div>
       <div class="pill-filter" id="modalTabs">
         <button class="on" onclick="switchModalTab('satuan', this)">Satu siswa</button>
-        <button onclick="switchModalTab('bulk', this)">Banyak sekaligus (bulk)</button>
+        <button onclick="switchModalTab('bulk', this)">Banyak sekaligus</button>
       </div>
 
       <div id="tabSatuan">
         <form onsubmit="return submitSiswaSatuan(event)">
           <label>Nama siswa</label>
           <input type="text" id="fNama" required placeholder="Contoh: Ahmad Zaky">
-          <label>Kelas (program ${state.program})</label>
+          <label>Kelas / Rombel (program ${state.program})</label>
           <select id="fKelas" required><option value="">Memuat kelas...</option></select>
-          <label>Tanggal lahir (opsional)</label>
-          <input type="date" id="fTglLahir">
+          <div class="field-row2">
+            <div><label>Tahun ajaran</label><input type="text" id="fTahunAjaran" value="2026/2027" placeholder="2026/2027"></div>
+            <div><label>Tanggal lahir</label><input type="date" id="fTglLahir"></div>
+          </div>
+          <div class="field-row2">
+            <div><label>SPP pokok / bulan (Rp)</label><input type="number" id="fSppPokok" value="300000" step="5000"></div>
+            <div><label>Biaya per jam lebih (Rp)</label><input type="number" id="fBiayaJam" value="15000" step="1000"></div>
+          </div>
           <label>Nama orang tua (opsional)</label>
           <input type="text" id="fOrtuNama" placeholder="Contoh: Bunda Siti">
-          <label>Email orang tua (opsional — dipakai untuk login orang tua)</label>
+          <label>Email orang tua (opsional — dipakai untuk login)</label>
           <input type="email" id="fOrtuEmail" placeholder="nama@email.com">
           <label>No. HP orang tua (opsional)</label>
           <input type="text" id="fOrtuHp" placeholder="0812xxxxxxx">
-          <button class="btn btn-primary" type="submit" style="width:100%;">Simpan siswa</button>
-          <p class="hint">Jika email orang tua diisi dan belum terdaftar, akun login orang tua baru otomatis dibuat dengan password default <strong>ortu123</strong>.</p>
+          <button class="btn btn-primary" type="submit">Simpan siswa</button>
+          <p class="hint">Jika email orang tua diisi dan belum terdaftar, akun login baru otomatis dibuat (password default: <strong>ortu123</strong>).</p>
         </form>
       </div>
 
       <div id="tabBulk" class="hidden">
         <label>Unggah file CSV (opsional)</label>
         <input type="file" id="fBulkFile" accept=".csv,text/csv" onchange="handleBulkFileUpload(event)">
-        <p style="font-size:11px; color:var(--muted); margin:-4px 0 12px;">Kolom CSV: Nama, Nama Kelas, TanggalLahir, Nama Ortu, Email Ortu, No HP Ortu (baris pertama boleh header, akan diabaikan otomatis jika terdeteksi)</p>
+        <p style="font-size:11px; color:var(--muted); margin:-4px 0 12px;">Kolom: Nama, Kelas, TanggalLahir, TahunAjaran, SPPPokok, BiayaJamLebih, NamaOrtu, EmailOrtu, NoHPOrtu</p>
         <form onsubmit="return submitSiswaBulk(event)">
           <label>Atau tempel data manual, satu siswa per baris, dipisah koma:</label>
-          <textarea id="fBulkText" rows="7" placeholder="Ahmad Zaky, KB-A, 2022-05-10, Bunda Siti, siti@gmail.com, 0812xxxxxxx
-Nur Layla, TPA-B, , Bunda Rina, , 0813xxxxxxx"></textarea>
-          <button class="btn btn-primary" type="submit" style="width:100%;">Proses & simpan semua</button>
+          <textarea id="fBulkText" rows="6" placeholder="Ahmad Zaky, KB-A, 2022-05-10, 2026/2027, 300000, 15000, Bunda Siti, siti@gmail.com, 0812xxxxxxx"></textarea>
+          <button class="btn btn-primary" type="submit">Proses & simpan semua</button>
           <div id="bulkResult"></div>
         </form>
       </div>
     </div>
   `;
   document.body.appendChild(overlay);
-
   try {
     const kelasList = await api(`/kelas?program=${state.program}`);
     document.getElementById('fKelas').innerHTML = kelasList.map(k => `<option value="${k.id}">${k.nama}</option>`).join('');
-  } catch (e) {
-    document.getElementById('fKelas').innerHTML = '<option value="">Gagal memuat kelas</option>';
-  }
+  } catch (e) { document.getElementById('fKelas').innerHTML = '<option value="">Gagal memuat kelas</option>'; }
 }
 
-function closeModal() {
-  const el = document.getElementById('modalOverlay');
-  if (el) el.remove();
-}
-
+function closeModal() { const el = document.getElementById('modalOverlay'); if (el) el.remove(); }
 function switchModalTab(tab, btn) {
   document.querySelectorAll('#modalTabs button').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
@@ -920,6 +1007,9 @@ async function submitSiswaSatuan(e) {
       body: JSON.stringify({
         nama: document.getElementById('fNama').value,
         kelas_id: document.getElementById('fKelas').value,
+        tahun_ajaran: document.getElementById('fTahunAjaran').value || '2026/2027',
+        spp_pokok: Number(document.getElementById('fSppPokok').value) || 300000,
+        biaya_per_jam_lebih: Number(document.getElementById('fBiayaJam').value) || 15000,
         tanggal_lahir: document.getElementById('fTglLahir').value || null,
         orang_tua_nama: document.getElementById('fOrtuNama').value || null,
         orang_tua_email: document.getElementById('fOrtuEmail').value || null,
@@ -937,10 +1027,7 @@ function handleBulkFileUpload(event) {
   const file = event.target.files[0];
   if (!file) return;
   const reader = new FileReader();
-  reader.onload = (e) => {
-    document.getElementById('fBulkText').value = e.target.result.trim();
-    showToast(`File "${file.name}" dimuat. Periksa datanya lalu klik "Proses & simpan semua".`);
-  };
+  reader.onload = (e) => { document.getElementById('fBulkText').value = e.target.result.trim(); showToast(`File "${file.name}" dimuat.`); };
   reader.onerror = () => showToast('Gagal membaca file.');
   reader.readAsText(file);
 }
@@ -950,17 +1037,14 @@ async function submitSiswaBulk(e) {
   const text = document.getElementById('fBulkText').value.trim();
   if (!text) { showToast('Data bulk masih kosong.'); return false; }
 
-  const rows = text.split('\n').map(line => line.trim()).filter(Boolean)
-    .filter(line => !/^nama\s*,/i.test(line)) // buang baris header jika ada, mis. "Nama, Kelas, ..."
+  const rows = text.split('\n').map(l => l.trim()).filter(Boolean)
+    .filter(l => !/^nama\s*,/i.test(l))
     .map(line => {
-      const parts = line.split(',').map(p => p.trim());
+      const p = line.split(',').map(x => x.trim());
       return {
-        nama: parts[0] || '',
-        kelas_nama: parts[1] || '',
-        tanggal_lahir: parts[2] || null,
-        orang_tua_nama: parts[3] || null,
-        orang_tua_email: parts[4] || null,
-        orang_tua_no_hp: parts[5] || null,
+        nama: p[0] || '', kelas_nama: p[1] || '', tanggal_lahir: p[2] || null,
+        tahun_ajaran: p[3] || '2026/2027', spp_pokok: p[4] ? Number(p[4]) : 300000, biaya_per_jam_lebih: p[5] ? Number(p[5]) : 15000,
+        orang_tua_nama: p[6] || null, orang_tua_email: p[7] || null, orang_tua_no_hp: p[8] || null,
       };
     });
 
@@ -968,17 +1052,81 @@ async function submitSiswaBulk(e) {
     const res = await api('/siswa/bulk', { method: 'POST', body: JSON.stringify({ rows }) });
     showToast(res.pesan);
     const resultEl = document.getElementById('bulkResult');
-    if (res.gagal > 0) {
-      resultEl.innerHTML = `<div class="error-msg" style="margin-top:10px;">Gagal: ${res.detailGagal.map(g => `Baris ${g.baris} (${g.nama}): ${g.error}`).join('<br>')}</div>`;
-    } else {
-      closeModal();
-    }
+    if (res.gagal > 0) resultEl.innerHTML = `<div class="error-msg" style="margin-top:10px;">${res.detailGagal.map(g => `Baris ${g.baris} (${g.nama}): ${g.error}`).join('<br>')}</div>`;
+    else closeModal();
     renderAdminSiswa();
   } catch (err) { showToast(err.message); }
   return false;
 }
 
-// ============ ADMIN ============
+// ============ MODAL EDIT SISWA (SPP, biaya jam, rombel, tahun ajaran, status) ============
+async function openEditSiswaModal(siswaId) {
+  const siswaList = await api(`/siswa?program=${state.program}`);
+  const s = siswaList.find(x => x.id === siswaId);
+  if (!s) return showToast('Data siswa tidak ditemukan.');
+
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  overlay.id = 'modalOverlay';
+  overlay.innerHTML = `
+    <div class="modal-box">
+      <div class="row" style="border:none; margin-bottom:10px;">
+        <h3 style="margin:0;">Edit ${s.nama}</h3>
+        <span style="cursor:pointer; font-size:20px; color:var(--muted); line-height:1;" onclick="closeModal()">&times;</span>
+      </div>
+      <form onsubmit="return submitEditSiswa(event, ${s.id})">
+        <label>Nama siswa</label>
+        <input type="text" id="eNama" required value="${s.nama}">
+        <label>Kelas / Rombel</label>
+        <select id="eKelas" required><option value="">Memuat...</option></select>
+        <div class="field-row2">
+          <div><label>Tahun ajaran</label><input type="text" id="eTahunAjaran" value="${s.tahun_ajaran}"></div>
+          <div><label>Status</label>
+            <select id="eStatus">
+              <option value="aktif" ${s.status==='aktif'?'selected':''}>Aktif</option>
+              <option value="nonaktif" ${s.status==='nonaktif'?'selected':''}>Nonaktif</option>
+              <option value="pindah" ${s.status==='pindah'?'selected':''}>Pindah</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row2">
+          <div><label>SPP pokok / bulan (Rp)</label><input type="number" id="eSppPokok" value="${s.spp_pokok}" step="5000"></div>
+          <div><label>Biaya per jam lebih (Rp)</label><input type="number" id="eBiayaJam" value="${s.biaya_per_jam_lebih}" step="1000"></div>
+        </div>
+        <p class="hint" style="margin-top:0;">Perubahan SPP/biaya jam hanya berlaku untuk tagihan baru yang dibuat setelah ini — tagihan bulan berjalan yang sudah ada tidak berubah otomatis.</p>
+        <button class="btn btn-primary" type="submit">Simpan perubahan</button>
+      </form>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  try {
+    const kelasList = await api(`/kelas?program=${state.program}`);
+    document.getElementById('eKelas').innerHTML = kelasList.map(k => `<option value="${k.id}" ${k.id===s.kelas_id?'selected':''}>${k.nama}</option>`).join('');
+  } catch (e) { document.getElementById('eKelas').innerHTML = `<option value="${s.kelas_id}">${s.kelas_nama}</option>`; }
+}
+
+async function submitEditSiswa(e, siswaId) {
+  e.preventDefault();
+  try {
+    const res = await api(`/siswa/${siswaId}`, {
+      method: 'PUT',
+      body: JSON.stringify({
+        nama: document.getElementById('eNama').value,
+        kelas_id: document.getElementById('eKelas').value,
+        tahun_ajaran: document.getElementById('eTahunAjaran').value,
+        status: document.getElementById('eStatus').value,
+        spp_pokok: Number(document.getElementById('eSppPokok').value),
+        biaya_per_jam_lebih: Number(document.getElementById('eBiayaJam').value),
+      }),
+    });
+    showToast(res.pesan);
+    closeModal();
+    renderAdminSiswa();
+  } catch (err) { showToast(err.message); }
+  return false;
+}
+
+// ============ ADMIN: DASHBOARD ============
 let dashPeriodeTipe = 'bulan';
 let dashPeriodeValue = new Date().toISOString().slice(0, 7);
 
@@ -1022,15 +1170,11 @@ async function renderAdminDashboard() {
       <div class="two-col-dash">
         <div class="card">
           <h4>Perbandingan jenjang</h4>
-          ${d.ringkasanJenjang.map(r => `
-            <div class="row"><span>${PROGRAM_LABEL[r.program_kode] || r.program_kode}</span><span>${r.total_siswa} anak &middot; ${r.total_kelas} kelas</span></div>
-          `).join('')}
+          ${d.ringkasanJenjang.map(r => `<div class="row"><span>${PROGRAM_LABEL[r.program_kode] || r.program_kode}</span><span>${r.total_siswa} anak &middot; ${r.total_kelas} kelas</span></div>`).join('')}
         </div>
         <div class="card">
           <h4>Siswa terbaru ditambahkan</h4>
-          ${d.pendaftarTerbaru.length === 0 ? '<p style="font-size:13px;color:var(--muted);">Belum ada data.</p>' : d.pendaftarTerbaru.map(s => `
-            <div class="row"><span>${s.nama} &middot; ${s.kelas_nama}</span><span class="badge success">${s.status}</span></div>
-          `).join('')}
+          ${d.pendaftarTerbaru.length === 0 ? '<p style="font-size:13px;color:var(--muted);">Belum ada data.</p>' : d.pendaftarTerbaru.map(s => `<div class="row"><span>${s.nama} &middot; ${s.kelas_nama}</span><span class="badge success">${s.status}</span></div>`).join('')}
         </div>
       </div>
 
@@ -1041,9 +1185,7 @@ async function renderAdminDashboard() {
             <span>${t.siswa_nama} &middot; ${t.kelas_nama}</span>
             <div style="display:flex;align-items:center;gap:10px;">
               <span style="color:var(--danger);font-weight:700;">${rupiah(t.total)}</span>
-              <button class="wa-icon-btn" title="Kirim pengingat WA" onclick="kirimPdfWA(${t.id})">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H8l-4 4z"/></svg>
-              </button>
+              <button class="wa-icon-btn" title="Kirim pengingat WA" onclick="kirimPdfWA(${t.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H8l-4 4z"/></svg></button>
             </div>
           </div>
         `).join('')}
@@ -1057,18 +1199,10 @@ function formatBulan(ym) {
   const nama = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
   return `${nama[parseInt(m,10)-1]} ${y}`;
 }
+function changeDashPeriodeTipe(tipe) { dashPeriodeTipe = tipe; dashPeriodeValue = tipe === 'tahun' ? new Date().getFullYear().toString() : new Date().toISOString().slice(0, 7); renderAdminDashboard(); }
+function changeDashPeriodeValue(val) { dashPeriodeValue = val; renderAdminDashboard(); }
 
-function changeDashPeriodeTipe(tipe) {
-  dashPeriodeTipe = tipe;
-  dashPeriodeValue = tipe === 'tahun' ? new Date().getFullYear().toString() : new Date().toISOString().slice(0, 7);
-  renderAdminDashboard();
-}
-
-function changeDashPeriodeValue(val) {
-  dashPeriodeValue = val;
-  renderAdminDashboard();
-}
-
+// ============ ADMIN: DATA SISWA ============
 async function renderAdminSiswa() {
   const main = document.getElementById('main');
   try {
@@ -1078,58 +1212,90 @@ async function renderAdminSiswa() {
         <h2>Data siswa</h2>
         <div style="display:flex; gap:8px;">
           <span class="sub" style="align-self:center;">Program: ${PROGRAM_LABEL[state.program]}</span>
-          <button class="btn btn-primary" onclick="openTambahSiswaModal()">+ Tambah siswa</button>
+          <button class="btn btn-primary" style="width:auto;" onclick="openTambahSiswaModal()">+ Tambah siswa</button>
         </div>
       </div>
       <table>
-        <thead><tr><th>Nama</th><th>Kelas</th><th>Orang tua</th><th>No. HP</th><th>Status</th></tr></thead>
+        <thead><tr><th>Nama</th><th>Kelas/Rombel</th><th>TA</th><th>SPP Pokok</th><th>Biaya/Jam</th><th>Orang tua</th><th>No. HP</th><th>Status</th><th></th></tr></thead>
         <tbody>
-          ${siswaList.map(s => `<tr><td>${s.nama}</td><td>${s.kelas_nama}</td><td>${s.orang_tua_nama || '-'}</td><td>${s.orang_tua_hp || '-'}</td><td><span class="badge ${s.status==='aktif'?'success':'warn'}">${s.status}</span></td></tr>`).join('')}
+          ${siswaList.map(s => `<tr>
+            <td>${s.nama}</td><td>${s.kelas_nama}</td><td>${s.tahun_ajaran}</td>
+            <td>${rupiah(s.spp_pokok)}</td><td>${rupiah(s.biaya_per_jam_lebih)}</td>
+            <td>${s.orang_tua_nama || '-'}</td><td>${s.orang_tua_hp || '-'}</td>
+            <td><span class="badge ${s.status==='aktif'?'success':'warn'}">${s.status}</span></td>
+            <td><button class="edit-icon-btn" title="Edit SPP, rombel, tahun ajaran" onclick="openEditSiswaModal(${s.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></button></td>
+          </tr>`).join('')}
         </tbody>
       </table>
-      <p style="font-size:11.5px;color:var(--muted);margin-top:12px;">Menampilkan ${siswaList.length} siswa program ${state.program}</p>
+      <p style="font-size:11.5px;color:var(--muted);margin-top:12px;">Menampilkan ${siswaList.length} siswa program ${state.program}. Klik ikon pensil untuk mengubah SPP, biaya kelebihan jam, rombel, atau tahun ajaran per siswa.</p>
     `;
   } catch (err) { main.innerHTML = `<div class="error-msg">${err.message}</div>`; }
 }
 
+// ============ ADMIN: SPP ============
 async function renderAdminSpp() {
   const main = document.getElementById('main');
   try {
     const tagihanList = await api(`/tagihan?program=${state.program}`);
     main.innerHTML = `
-      <div class="page-title">
-        <h2>SPP</h2>
-        <button class="gform-btn" onclick="kirimGoogleForm()">Kirim laporan bulanan ke Google Form</button>
-      </div>
-      <table>
-        <thead><tr><th>Siswa</th><th>Periode</th><th>Total</th><th>Status</th><th>Aksi</th></tr></thead>
-        <tbody>
-          ${tagihanList.map(t => `
-            <tr>
-              <td>${t.siswa_nama} &middot; ${t.kelas_nama}</td>
-              <td>${t.periode}</td>
-              <td style="font-weight:700;">${rupiah(t.total)}</td>
-              <td><span class="badge ${t.status==='lunas'?'success':'danger'}">${t.status==='lunas'?'Lunas':'Belum bayar'}</span></td>
-              <td style="display:flex; gap:6px;">
-                <a href="#" onclick="lihatInvoiceMock(${t.id}); return false;" class="wa-icon-btn" title="Lihat pratinjau invoice" style="text-decoration:none;">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l4 4v14H6z"/><path d="M9 13h6M9 17h6M9 9h2"/></svg>
-                </a>
-                ${t.status !== 'lunas' ? `<button class="wa-icon-btn" title="Kirim PDF tagihan ke WA" onclick="kirimPdfWA(${t.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H8l-4 4z"/></svg></button>` : ''}
-              </td>
-            </tr>
+      <div class="page-title"><h2>SPP</h2><button class="gform-btn" onclick="kirimGoogleForm()">Kirim laporan bulanan ke Google Form</button></div>
+      ${tagihanList.map(t => `
+        <div class="card">
+          <div class="row" style="border:none;">
+            <span style="font-weight:700;">${t.siswa_nama} &middot; ${t.kelas_nama} &middot; ${t.periode}</span>
+            <span class="badge ${t.status==='lunas'?'success':'danger'}">${t.status==='lunas'?'Lunas':'Belum bayar'}</span>
+          </div>
+          ${t.items.map(i => `
+            <div class="row">
+              <span>${i.nama}</span>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span>${rupiah(i.nominal)}</span>
+                <button class="edit-icon-btn" title="Edit nominal" onclick="editNominalItem(${i.id}, '${i.nama.replace(/'/g,"\\'")}', ${i.nominal})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></button>
+              </div>
+            </div>
           `).join('')}
-        </tbody>
-      </table>
-      <p class="hint">Ikon dokumen membuka file PDF tagihan (asli, bisa diunduh). Ikon WA membuat PDF lalu mencatat pengiriman — pengiriman otomatis ke WhatsApp sungguhan perlu WhatsApp Business API resmi.</p>
+          <div class="row" style="font-weight:700;">
+            <span>Total</span>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span>${rupiah(t.total)}</span>
+              <a href="#" onclick="lihatPdf(${t.id}); return false;" class="wa-icon-btn" title="Lihat/unduh PDF" style="text-decoration:none;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l4 4v14H6z"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></a>
+              ${t.status !== 'lunas' ? `<button class="wa-icon-btn" title="Kirim PDF ke WA" onclick="kirimPdfWA(${t.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H8l-4 4z"/></svg></button>` : ''}
+            </div>
+          </div>
+        </div>
+      `).join('')}
+      <p class="hint">Klik ikon pensil di tiap komponen untuk mengubah nominalnya (mis. potongan/tambahan khusus bulan ini). Ikon dokumen membuka PDF invoice asli.</p>
     `;
   } catch (err) { main.innerHTML = `<div class="error-msg">${err.message}</div>`; }
 }
+
+async function editNominalItem(itemId, namaItem, nominalLama) {
+  const baru = prompt(`Ubah nominal "${namaItem}" (saat ini ${rupiah(nominalLama)}):`, nominalLama);
+  if (baru === null) return;
+  const nilai = Number(baru.replace(/[^0-9]/g, ''));
+  if (isNaN(nilai) || nilai < 0) return showToast('Nominal tidak valid.');
+  try {
+    const res = await api(`/tagihan/item/${itemId}`, { method: 'PUT', body: JSON.stringify({ nominal: nilai }) });
+    showToast(res.pesan);
+    renderAdminSpp();
+  } catch (err) { showToast(err.message); }
+}
+
+function lihatPdf(tagihanId) { lihatInvoiceMock(tagihanId); }
 
 async function kirimPdfWA(tagihanId) {
   try {
     const res = await api(`/tagihan/${tagihanId}/kirim-wa`, { method: 'POST' });
     showToast(res.pesan);
     lihatInvoiceMock(tagihanId);
+  } catch (err) { showToast(err.message); }
+}
+
+async function kirimGoogleForm() {
+  try {
+    const periode = new Date().toISOString().slice(0, 7);
+    const res = await api('/notifikasi/google-form', { method: 'POST', body: JSON.stringify({ periode }) });
+    showToast(res.pesan);
   } catch (err) { showToast(err.message); }
 }
 
@@ -1141,7 +1307,6 @@ async function renderSuperAdminAbsensi() {
   try {
     const kelasList = await api(`/kelas?program=${state.program}`);
     if (!superAdminKelasTerpilih && kelasList.length) superAdminKelasTerpilih = kelasList[0].id;
-
     main.innerHTML = `
       <div class="page-title"><h2>Absensi (semua kelas)</h2></div>
       <div class="card" style="background:var(--teal-100); border:none;">
@@ -1166,7 +1331,6 @@ async function muatSuperAdminAbsensiTable() {
     const absensiTanggal = await api(`/absensi?tanggal=${tanggalDipilih}&kelas_id=${superAdminKelasTerpilih}`);
     const mapAbsen = {};
     absensiTanggal.forEach(a => mapAbsen[a.siswa_id] = a);
-
     el.innerHTML = `
       <div class="card" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
         <div><label style="margin-bottom:4px;">Tanggal absensi</label>
@@ -1183,21 +1347,17 @@ async function muatSuperAdminAbsensiTable() {
             return `
             <tr>
               <td>${s.nama}</td>
-              <td>
-                <div class="segbtns">
-                  <button class="${status === 'hadir' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','hadir',this)">Hadir</button>
-                  <button class="${status === 'sakit' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','sakit',this)">Sakit</button>
-                  <button class="${status === 'izin' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','izin',this)">Izin</button>
-                </div>
-              </td>
-              <td>
-                <select onchange="setAbsenField(${s.id},'jam_pulang_kategori',this.value,null)">
-                  <option value="tepat_waktu" ${kategori === 'tepat_waktu' ? 'selected' : ''}>Dijemput tepat waktu</option>
-                  <option value="plus_1_jam" ${kategori === 'plus_1_jam' ? 'selected' : ''}>Kelebihan 1 jam (+Rp15.000)</option>
-                  <option value="plus_2_jam" ${kategori === 'plus_2_jam' ? 'selected' : ''}>Kelebihan 2 jam (+Rp30.000)</option>
-                </select>
-              </td>
-              <td><button class="btn btn-primary" style="padding:6px 14px;" onclick="simpanAbsensi(${s.id})">Simpan</button></td>
+              <td><div class="segbtns">
+                <button class="${status === 'hadir' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','hadir',this)">Hadir</button>
+                <button class="${status === 'sakit' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','sakit',this)">Sakit</button>
+                <button class="${status === 'izin' ? 'on' : ''}" onclick="setAbsenField(${s.id},'status','izin',this)">Izin</button>
+              </div></td>
+              <td><select onchange="setAbsenField(${s.id},'jam_pulang_kategori',this.value,null)">
+                <option value="tepat_waktu" ${kategori === 'tepat_waktu' ? 'selected' : ''}>Dijemput tepat waktu</option>
+                <option value="plus_1_jam" ${kategori === 'plus_1_jam' ? 'selected' : ''}>Kelebihan 1 jam (+${rupiah(s.biaya_per_jam_lebih)})</option>
+                <option value="plus_2_jam" ${kategori === 'plus_2_jam' ? 'selected' : ''}>Kelebihan 2 jam (+${rupiah(s.biaya_per_jam_lebih*2)})</option>
+              </select></td>
+              <td><button class="btn btn-primary" style="width:auto;padding:6px 14px;" onclick="simpanAbsensi(${s.id})">Simpan</button></td>
             </tr>`;
           }).join('')}
         </tbody>
@@ -1205,7 +1365,6 @@ async function muatSuperAdminAbsensiTable() {
     `;
   } catch (err) { el.innerHTML = `<div class="error-msg">${err.message}</div>`; }
 }
-
 function changeSuperAdminKelas(val) { superAdminKelasTerpilih = val; muatSuperAdminAbsensiTable(); }
 function changeAbsenDateSuper(val) { selectedAbsenDate = val; muatSuperAdminAbsensiTable(); }
 
@@ -1216,7 +1375,7 @@ async function renderSuperAdminOrtuPreview() {
     main.innerHTML = `
       <div class="page-title"><h2>Lihat sisi Orang Tua</h2></div>
       <div class="card" style="background:var(--teal-100); border:none;">
-        <p style="font-size:11.5px; color:var(--teal-900); margin:0;">Mode Super Admin — melihat persis apa yang dilihat orang tua siswa tertentu, untuk keperluan pengawasan/dukungan.</p>
+        <p style="font-size:11.5px; color:var(--teal-900); margin:0;">Mode Super Admin — melihat persis apa yang dilihat orang tua siswa tertentu.</p>
       </div>
       <label style="max-width:280px;">Pilih siswa</label>
       <select id="superOrtuSelect" style="max-width:280px;" onchange="muatSuperAdminOrtuPreview(this.value)">
@@ -1252,36 +1411,113 @@ async function muatSuperAdminOrtuPreview(siswaId) {
         ` : '<p style="font-size:13px;color:var(--muted);">Belum ada laporan.</p>'}
       </div>
       <div class="card" style="display:flex;justify-content:space-between;align-items:center;">
-        <div>
-          <p style="font-weight:700;font-size:13px;margin:0;">Tagihan aktif</p>
-          <p style="font-size:11.5px;color:var(--muted);margin:2px 0 0;">${tagihan ? tagihan.periode : 'Tidak ada tagihan tertunda'}</p>
-        </div>
+        <div><p style="font-weight:700;font-size:13px;margin:0;">Tagihan aktif</p><p style="font-size:11.5px;color:var(--muted);margin:2px 0 0;">${tagihan ? tagihan.periode : 'Tidak ada tagihan tertunda'}</p></div>
         ${tagihan ? `<span style="font-weight:700;color:var(--danger);">${rupiah(tagihan.total)}</span>` : ''}
       </div>
     `;
   } catch (err) { el.innerHTML = `<div class="error-msg">${err.message}</div>`; }
 }
 
-async function kirimWA(nama, hp, jumlah) {
+// ============ DOKUMENTASI (FOTO & VIDEO) — GURU/ORTU/ADMIN ============
+async function renderDokumentasi() {
+  const main = document.getElementById('main');
+  const role = state.user.role;
   try {
-    const pesan = `Assalamu'alaikum ${nama}, tagihan SPP sebesar ${rupiah(jumlah)} mohon segera diselesaikan. Jazakallahu khairan.`;
-    const res = await api('/notifikasi/wa', { method: 'POST', body: JSON.stringify({ tujuan: hp || nama, pesan }) });
-    showToast(res.pesan + ' (' + res.catatan + ')');
-  } catch (err) { showToast(err.message); }
+    const qs = role === 'admin' ? `?program=${state.program}` : '';
+    const list = await api(`/dokumentasi${qs}`);
+
+    const formUpload = (role === 'guru' || role === 'admin') ? `
+      <div class="card">
+        <h4>Unggah dokumentasi baru</h4>
+        <form onsubmit="return submitDokumentasi(event)" enctype="multipart/form-data">
+          <div class="field-row2">
+            <div><label>Judul kegiatan</label><input type="text" id="dJudul" required placeholder="Contoh: Praktik wudhu bersama"></div>
+            <div><label>Tipe</label><select id="dTipe" onchange="toggleDokFields()"><option value="foto">Foto</option><option value="video">Video</option></select></div>
+          </div>
+          <div id="dFileWrap"><label>Unggah file foto</label><input type="file" id="dFile" accept="image/*"></div>
+          <div id="dUrlWrap" class="hidden"><label>Atau tautan video (YouTube, dsb.)</label><input type="text" id="dUrl" placeholder="https://youtube.com/watch?v=..."></div>
+          <label>Keterangan (opsional)</label>
+          <textarea id="dKeterangan" rows="2" placeholder="Ceritakan sedikit tentang kegiatan ini..."></textarea>
+          <button class="btn btn-primary" type="submit">Unggah</button>
+        </form>
+      </div>
+    ` : '';
+
+    main.innerHTML = `
+      <div class="page-title"><h2>Dokumentasi Kegiatan</h2><span class="sub">Foto & video kegiatan kelas</span></div>
+      ${formUpload}
+      <div class="galeri-grid">
+        ${list.length === 0 ? '<p style="font-size:13px;color:var(--muted);">Belum ada dokumentasi.</p>' : list.map(d => `
+          <div class="galeri-card">
+            <div class="galeri-media">
+              ${d.tipe === 'foto' && d.file_path
+                ? `<img src="${d.file_path}" alt="${d.judul}">`
+                : d.tipe === 'video' && d.file_path
+                ? `<video src="${d.file_path}" controls></video>`
+                : d.url_eksternal
+                ? `<a href="${d.url_eksternal}" target="_blank" style="text-decoration:none; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+                     <span class="play-badge"><svg width="40" height="40" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.35)"/><polygon points="10,8 16,12 10,16"/></svg></span>
+                   </a>`
+                : '<span style="font-size:12px;color:var(--muted);">Tidak ada media</span>'}
+            </div>
+            <div class="galeri-body">
+              <p class="g-title">${d.judul}</p>
+              <p class="g-meta">${d.kelas_nama || ''} &middot; ${d.tanggal} &middot; ${d.guru_nama || ''}</p>
+              ${d.keterangan ? `<p class="g-ket">${d.keterangan}</p>` : ''}
+              ${(role === 'guru' || role === 'admin') ? `<button class="wa-icon-btn" style="margin-top:8px;" title="Hapus" onclick="hapusDokumentasi(${d.id})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></svg></button>` : ''}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+  } catch (err) { main.innerHTML = `<div class="error-msg">${err.message}</div>`; }
 }
 
-async function kirimGoogleForm() {
+function toggleDokFields() {
+  const tipe = document.getElementById('dTipe').value;
+  document.getElementById('dFileWrap').classList.toggle('hidden', tipe === 'video');
+  document.getElementById('dUrlWrap').classList.toggle('hidden', tipe === 'foto');
+  document.querySelector('#dFileWrap label').textContent = tipe === 'foto' ? 'Unggah file foto' : 'Unggah file video (maks 25MB)';
+  document.getElementById('dFile').accept = tipe === 'foto' ? 'image/*' : 'video/*';
+}
+
+async function submitDokumentasi(e) {
+  e.preventDefault();
+  const judul = document.getElementById('dJudul').value;
+  const tipe = document.getElementById('dTipe').value;
+  const keterangan = document.getElementById('dKeterangan').value;
+  const fileInput = document.getElementById('dFile');
+  const urlEksternal = document.getElementById('dUrl') ? document.getElementById('dUrl').value : '';
+
+  const formData = new FormData();
+  formData.append('judul', judul);
+  formData.append('tipe', tipe);
+  formData.append('keterangan', keterangan);
+  if (fileInput.files[0]) formData.append('file', fileInput.files[0]);
+  if (urlEksternal) formData.append('url_eksternal', urlEksternal);
+
   try {
-    const periode = new Date().toISOString().slice(0, 7);
-    const res = await api('/notifikasi/google-form', { method: 'POST', body: JSON.stringify({ periode }) });
+    const res = await api('/dokumentasi', { method: 'POST', body: formData });
     showToast(res.pesan);
+    renderDokumentasi();
+  } catch (err) { showToast(err.message); }
+  return false;
+}
+
+async function hapusDokumentasi(id) {
+  if (!confirm('Hapus dokumentasi ini?')) return;
+  try {
+    const res = await api(`/dokumentasi/${id}`, { method: 'DELETE' });
+    showToast(res.pesan);
+    renderDokumentasi();
   } catch (err) { showToast(err.message); }
 }
 
 // ============ INIT ============
 (function init() {
+  muatKalenderLanding();
   if (state.token && state.user) {
-    state.program = 'KB'; // default tampilan jika sesi tersimpan; bisa disesuaikan
+    state.program = 'KB';
     masukKeAplikasi();
   }
 })();
