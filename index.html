@@ -186,6 +186,8 @@ tr:last-child td{border-bottom:none;}
 .btn-mini{border:1px solid #E4DCCB;background:#fff;color:#1B6FB0;font:600 12px/1 'Quicksand',sans-serif;padding:6px 10px;border-radius:999px;cursor:pointer;margin-right:4px;white-space:nowrap}
 .btn-mini:hover{background:#E3F4FF}
 .btn-mini.danger{color:#D64545}.btn-mini.danger:hover{background:#FDECEC}
+
+.error-msg:empty{display:none}
 </style>
 </head>
 <body>
@@ -504,6 +506,24 @@ async function api(path, opts = {}) {
     if (state.user.role === 'ortu') list = list.filter(t => { const s = mockDB.siswa.find(s => s.id === t.siswa_id); return s && s.orang_tua_id === state.user.id; });
     const program = params.get('program'); if (program) list = list.filter(t => t.program_kode === program);
     return list;
+  }
+
+  m = base.match(/^\/tagihan\/(\d+)\/status$/);
+  if (m && method === 'PUT') {
+    const t = mockDB.tagihan.find(t => t.id === Number(m[1]));
+    if (!t) throw new Error('Tagihan tidak ditemukan.');
+    if (body.status === 'lunas') {
+      if (t.status === 'lunas') throw new Error('Tagihan ini sudah lunas.');
+      if (!['tunai', 'transfer', 'qris', 'lainnya'].includes(body.metode || 'tunai')) throw new Error('Metode pembayaran tidak valid.');
+      t.status = 'lunas'; t.metode_bayar = body.metode || 'tunai'; t.tgl_bayar = (body.tanggal_bayar || new Date().toISOString().slice(0, 10)) + ' 12:00:00';
+      return { ok: true, pesan: `Tagihan ${t.periode} ditandai LUNAS (Rp${t.total.toLocaleString('id-ID')}, ${t.metode_bayar}).` };
+    }
+    if (body.status === 'belum_bayar') {
+      if (t.status !== 'lunas') throw new Error('Tagihan ini memang belum dibayar.');
+      t.status = 'belum_bayar'; t.metode_bayar = null; t.tgl_bayar = null;
+      return { ok: true, pesan: `Status tagihan ${t.periode} dikembalikan menjadi BELUM BAYAR.` };
+    }
+    throw new Error('Status tidak valid.');
   }
 
   m = base.match(/^\/tagihan\/item\/(\d+)$/);
@@ -1330,17 +1350,25 @@ async function renderAdminSiswa() {
 }
 
 // ============ ADMIN: SPP ============
+let sppCache = [];
 async function renderAdminSpp() {
   const main = document.getElementById('main');
   try {
     const tagihanList = await api(`/tagihan?program=${state.program}`);
+    sppCache = tagihanList;
     main.innerHTML = `
       <div class="page-title"><h2>SPP</h2><button class="gform-btn" onclick="kirimGoogleForm()">Kirim laporan bulanan ke Google Form</button></div>
       ${tagihanList.map(t => `
         <div class="card">
           <div class="row" style="border:none;">
             <span style="font-weight:700;">${t.siswa_nama} &middot; ${t.kelas_nama} &middot; ${t.periode}</span>
-            <span class="badge ${t.status==='lunas'?'success':'danger'}">${t.status==='lunas'?'Lunas':'Belum bayar'}</span>
+            <span style="display:flex;align-items:center;gap:8px;">
+              ${t.status === 'lunas' && t.tgl_bayar ? `<span style="font-size:11px;color:var(--muted);">dibayar ${esc(String(t.tgl_bayar).slice(0, 10))}${t.metode_bayar ? ' &middot; ' + esc(t.metode_bayar) : ''}</span>` : ''}
+              <span class="badge ${t.status==='lunas'?'success':'danger'}">${t.status==='lunas'?'Lunas':'Belum bayar'}</span>
+              ${t.status === 'lunas'
+                ? `<button class="btn-mini danger" onclick="batalkanLunas(${t.id})">Batalkan lunas</button>`
+                : `<button class="btn-mini" onclick="openStatusSppModal(${t.id})">Tandai lunas</button>`}
+            </span>
           </div>
           ${t.items.map(i => `
             <div class="row">
@@ -1361,7 +1389,7 @@ async function renderAdminSpp() {
           </div>
         </div>
       `).join('')}
-      <p class="hint">Klik ikon pensil di tiap komponen untuk mengubah nominalnya (mis. potongan/tambahan khusus bulan ini). Ikon dokumen membuka PDF invoice asli.</p>
+      <p class="hint">Klik ikon pensil di tiap komponen untuk mengubah nominalnya (mis. potongan/tambahan khusus bulan ini). Ikon dokumen membuka PDF invoice asli. Tombol <b>Tandai lunas</b> mencatat pembayaran manual (tunai/transfer) dan langsung masuk hitungan SPP diterima di dashboard.</p>
     `;
   } catch (err) { main.innerHTML = `<div class="error-msg">${err.message}</div>`; }
 }
@@ -1375,6 +1403,39 @@ async function editNominalItem(itemId, namaItem, nominalLama) {
     const res = await api(`/tagihan/item/${itemId}`, { method: 'PUT', body: JSON.stringify({ nominal: nilai }) });
     showToast(res.pesan);
     renderAdminSpp();
+  } catch (err) { showToast(err.message); }
+}
+
+// ---- Ubah status SPP manual (Admin) ----
+function openStatusSppModal(tagihanId) {
+  const t = sppCache.find(x => x.id === tagihanId); if (!t) return;
+  const nama = t.siswa_nama, periode = t.periode, total = t.total;
+  const hariIni = new Date().toISOString().slice(0, 10);
+  panelModal('Tandai SPP lunas', `
+    <form onsubmit="return simpanStatusLunas(event, ${tagihanId})">
+      <p style="font-size:12.5px;margin:0 0 8px;"><b>${esc(nama)}</b> &middot; ${esc(periode)}<br>Total tagihan: <b>${rupiah(total)}</b></p>
+      <label>Metode pembayaran</label>
+      <select id="sMetode"><option value="tunai">Tunai</option><option value="transfer">Transfer bank</option><option value="qris">QRIS</option><option value="lainnya">Lainnya</option></select>
+      <label>Tanggal dibayar</label><input id="sTgl" type="date" required value="${hariIni}" max="${hariIni}">
+      <div id="panelErr" class="error-msg"></div>
+      <button class="btn btn-primary" type="submit">Tandai lunas</button>
+    </form>`);
+}
+async function simpanStatusLunas(e, tagihanId) {
+  e.preventDefault();
+  try {
+    const res = await api(`/tagihan/${tagihanId}/status`, { method: 'PUT', body: JSON.stringify({ status: 'lunas', metode: document.getElementById('sMetode').value, tanggal_bayar: document.getElementById('sTgl').value }) });
+    closeModal(); showToast(res.pesan); renderAdminSpp();
+  } catch (err) { document.getElementById('panelErr').textContent = err.message; }
+  return false;
+}
+async function batalkanLunas(tagihanId) {
+  const t = sppCache.find(x => x.id === tagihanId); if (!t) return;
+  const nama = t.siswa_nama, periode = t.periode;
+  if (!confirm(`Batalkan status lunas untuk ${nama} (${periode})? Tagihan akan kembali menjadi BELUM BAYAR dan tidak dihitung sebagai SPP diterima.`)) return;
+  try {
+    const res = await api(`/tagihan/${tagihanId}/status`, { method: 'PUT', body: JSON.stringify({ status: 'belum_bayar' }) });
+    showToast(res.pesan); renderAdminSpp();
   } catch (err) { showToast(err.message); }
 }
 
