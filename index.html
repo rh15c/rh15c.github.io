@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salsabila Edu — Mockup</title>
+<title>Salsabila Edu — Mockup v1.2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -181,6 +181,11 @@ tr:last-child td{border-bottom:none;}
   .page-title h2{font-size:18px;}
 }
 
+
+/* Tombol teks kecil untuk Panel Kontrol */
+.btn-mini{border:1px solid #E4DCCB;background:#fff;color:#1B6FB0;font:600 12px/1 'Quicksand',sans-serif;padding:6px 10px;border-radius:999px;cursor:pointer;margin-right:4px;white-space:nowrap}
+.btn-mini:hover{background:#E3F4FF}
+.btn-mini.danger{color:#D64545}.btn-mini.danger:hover{background:#FDECEC}
 </style>
 </head>
 <body>
@@ -198,7 +203,7 @@ tr:last-child td{border-bottom:none;}
 
   <div id="screenLanding">
     <div class="landing-hero">
-      <svg viewBox="0 0 200 90" fill="none" xmlns="rh15c.github.io/logo.png" style="width:220px; max-width:70%; height:auto;">
+      <svg viewBox="0 0 200 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:220px; max-width:70%; height:auto;">
         <circle cx="34" cy="24" r="16" fill="#FFC93C"/>
         <g stroke="#FFC93C" stroke-width="3" stroke-linecap="round"><line x1="34" y1="2" x2="34" y2="8"/><line x1="52" y1="10" x2="48" y2="14"/><line x1="16" y1="10" x2="20" y2="14"/></g>
         <ellipse cx="150" cy="28" rx="22" ry="12" fill="#fff"/><ellipse cx="168" cy="24" rx="16" ry="10" fill="#fff"/>
@@ -316,19 +321,19 @@ const mockDB = {
     { id: 2, kelas_id: 3, kelas_nama: 'TPA-A', program_kode: 'TPA', guru_id: 3, guru_nama: 'Ustadz Yusuf', tanggal: '2026-09-08', judul: 'Kegiatan bermain sensori', tipe: 'foto', file_path: PLACEHOLDER_FOTO, url_eksternal: null, keterangan: 'Anak-anak TPA-A bermain pasir kinetik untuk melatih motorik halus.' },
   ],
   kalenderAkademik: [
-    { tanggal_mulai: '2026-07-13', tanggal_selesai: '2026-07-13', judul: 'Hari pertama masuk sekolah', kategori: 'semester' },
-    { tanggal_mulai: '2026-07-13', tanggal_selesai: '2026-07-18', judul: 'Masa pengenalan lingkungan sekolah (MPLS)', kategori: 'kegiatan' },
-    { tanggal_mulai: '2026-08-17', tanggal_selesai: '2026-08-17', judul: 'Libur Hari Kemerdekaan RI', kategori: 'libur' },
-    { tanggal_mulai: '2026-09-08', tanggal_selesai: '2026-09-08', judul: 'Setoran hafalan mingguan seluruh kelas', kategori: 'kegiatan' },
-    { tanggal_mulai: '2026-10-05', tanggal_selesai: '2026-10-05', judul: 'Kunjungan edukasi ke pemadam kebakaran', kategori: 'kegiatan' },
-    { tanggal_mulai: '2026-12-14', tanggal_selesai: '2026-12-18', judul: 'Pekan penilaian akhir semester ganjil', kategori: 'semester' },
-    { tanggal_mulai: '2026-12-21', tanggal_selesai: '2027-01-02', judul: 'Libur akhir semester ganjil', kategori: 'libur' },
-    { tanggal_mulai: '2027-01-04', tanggal_selesai: '2027-01-04', judul: 'Hari pertama semester genap', kategori: 'semester' },
-    { tanggal_mulai: '2027-01-15', tanggal_selesai: '2027-03-15', judul: 'Pendaftaran peserta didik baru (PPDB) 2027/2028', kategori: 'ppdb' },
-    { tanggal_mulai: '2027-03-20', tanggal_selesai: '2027-03-21', judul: 'Perkiraan libur Idul Fitri (menyesuaikan penetapan pemerintah)', kategori: 'libur' },
-    { tanggal_mulai: '2027-05-10', tanggal_selesai: '2027-05-14', judul: 'Pekan penilaian akhir tahun ajaran', kategori: 'semester' },
-    { tanggal_mulai: '2027-06-12', tanggal_selesai: '2027-06-12', judul: 'Pentas seni & penyerahan rapor akhir tahun', kategori: 'kegiatan' },
-    { tanggal_mulai: '2027-06-15', tanggal_selesai: '2027-07-10', judul: 'Libur akhir tahun ajaran', kategori: 'libur' },
+    { id: 1, tanggal_mulai: '2026-07-13', tanggal_selesai: '2026-07-13', judul: 'Hari pertama masuk sekolah', kategori: 'semester' },
+    { id: 2, tanggal_mulai: '2026-07-13', tanggal_selesai: '2026-07-18', judul: 'Masa pengenalan lingkungan sekolah (MPLS)', kategori: 'kegiatan' },
+    { id: 3, tanggal_mulai: '2026-08-17', tanggal_selesai: '2026-08-17', judul: 'Libur Hari Kemerdekaan RI', kategori: 'libur' },
+    { id: 4, tanggal_mulai: '2026-09-08', tanggal_selesai: '2026-09-08', judul: 'Setoran hafalan mingguan seluruh kelas', kategori: 'kegiatan' },
+    { id: 5, tanggal_mulai: '2026-10-05', tanggal_selesai: '2026-10-05', judul: 'Kunjungan edukasi ke pemadam kebakaran', kategori: 'kegiatan' },
+    { id: 6, tanggal_mulai: '2026-12-14', tanggal_selesai: '2026-12-18', judul: 'Pekan penilaian akhir semester ganjil', kategori: 'semester' },
+    { id: 7, tanggal_mulai: '2026-12-21', tanggal_selesai: '2027-01-02', judul: 'Libur akhir semester ganjil', kategori: 'libur' },
+    { id: 8, tanggal_mulai: '2027-01-04', tanggal_selesai: '2027-01-04', judul: 'Hari pertama semester genap', kategori: 'semester' },
+    { id: 9, tanggal_mulai: '2027-01-15', tanggal_selesai: '2027-03-15', judul: 'Pendaftaran peserta didik baru (PPDB) 2027/2028', kategori: 'ppdb' },
+    { id: 10, tanggal_mulai: '2027-03-20', tanggal_selesai: '2027-03-21', judul: 'Perkiraan libur Idul Fitri (menyesuaikan penetapan pemerintah)', kategori: 'libur' },
+    { id: 11, tanggal_mulai: '2027-05-10', tanggal_selesai: '2027-05-14', judul: 'Pekan penilaian akhir tahun ajaran', kategori: 'semester' },
+    { id: 12, tanggal_mulai: '2027-06-12', tanggal_selesai: '2027-06-12', judul: 'Pentas seni & penyerahan rapor akhir tahun', kategori: 'kegiatan' },
+    { id: 13, tanggal_mulai: '2027-06-15', tanggal_selesai: '2027-07-10', judul: 'Libur akhir tahun ajaran', kategori: 'libur' },
   ],
   users: {
     admin: [
@@ -336,9 +341,9 @@ const mockDB = {
       { id: 2, nama: 'Super Admin', email: 'superadmin@salsabila.sch.id', password: 'super123', is_super_admin: true },
     ],
     guru: [
-      { id: 1, nama: 'Ustadzah Nia', email: 'nia@salsabila.sch.id', password: 'guru123', kelas_id: 2 },
-      { id: 2, nama: 'Ustadzah Fauziah', email: 'fauziah@salsabila.sch.id', password: 'guru123', kelas_id: 1 },
-      { id: 3, nama: 'Ustadz Yusuf', email: 'yusuf@salsabila.sch.id', password: 'guru123', kelas_id: 3 },
+      { id: 1, nama: 'Ustadzah Nia', email: 'nia@salsabila.sch.id', password: 'guru123', kelas_id: 2, no_hp: '081300000001', status: 'aktif' },
+      { id: 2, nama: 'Ustadzah Fauziah', email: 'fauziah@salsabila.sch.id', password: 'guru123', kelas_id: 1, no_hp: '081300000002', status: 'aktif' },
+      { id: 3, nama: 'Ustadz Yusuf', email: 'yusuf@salsabila.sch.id', password: 'guru123', kelas_id: 3, no_hp: '081300000003', status: 'aktif' },
     ],
     ortu: [
       { id: 1, nama: 'Bunda Aisyah', email: 'aisyah@gmail.com', password: 'ortu123' },
@@ -377,6 +382,7 @@ async function api(path, opts = {}) {
     const table = mockDB.users[body.role] || [];
     const user = table.find(u => u.email === body.email && u.password === body.password);
     if (!user) throw new Error('Email atau kata sandi salah.');
+    if (body.role === 'guru' && user.status === 'nonaktif') throw new Error('Akun guru ini dinonaktifkan. Hubungi admin.');
     let extra = {};
     if (body.role === 'guru') extra = { kelas: mockDB.kelas.find(k => k.id === user.kelas_id) };
     if (body.role === 'ortu') extra = { anak: mockDB.siswa.filter(s => s.orang_tua_id === user.id) };
@@ -579,6 +585,90 @@ async function api(path, opts = {}) {
   m = base.match(/^\/dokumentasi\/(\d+)$/);
   if (m && method === 'DELETE') { mockDB.dokumentasi = mockDB.dokumentasi.filter(d => d.id !== Number(m[1])); return { ok: true, pesan: 'Dokumentasi berhasil dihapus.' }; }
 
+  // ---- PANEL KONTROL (Super Admin) ----
+  if (base.startsWith('/panel')) {
+    if (!state.user || !state.user.is_super_admin) throw new Error('Hanya Super Admin yang boleh mengakses Panel Kontrol.');
+    const TIPE = ['admin', 'guru', 'ortu'];
+    const emailTaken = (e, tipe, id) => mockDB.users[tipe].some(u => u.email === e && u.id !== id);
+    if (base === '/panel/users' && method === 'GET') {
+      const U = mockDB.users;
+      return {
+        admin: U.admin.map(a => ({ id: a.id, nama: a.nama, email: a.email, is_super_admin: a.is_super_admin ? 1 : 0 })),
+        guru: U.guru.map(g => ({ id: g.id, nama: g.nama, email: g.email, no_hp: g.no_hp || null, kelas_id: g.kelas_id, status: g.status || 'aktif', kelas_nama: (mockDB.kelas.find(k => k.id === g.kelas_id) || {}).nama || null })),
+        ortu: U.ortu.map(o => ({ id: o.id, nama: o.nama, email: o.email, no_hp: o.no_hp || null, jumlah_anak: mockDB.siswa.filter(s => s.orang_tua_id === o.id).length })),
+      };
+    }
+    m = base.match(/^\/panel\/users\/(admin|guru|ortu)(?:\/(\d+))?(\/reset-password)?$/);
+    if (m) {
+      const tipe = m[1], id = m[2] ? Number(m[2]) : null, list = mockDB.users[tipe];
+      if (!id && method === 'POST') {
+        if (!body.nama || !body.email || !body.password) throw new Error('Nama, email, dan password wajib diisi.');
+        if (String(body.password).length < 6) throw new Error('Password minimal 6 karakter.');
+        if (emailTaken(body.email, tipe, 0)) throw new Error('Email sudah dipakai akun lain.');
+        const u = { id: nextId(list), nama: body.nama, email: body.email, password: body.password };
+        if (tipe === 'admin') u.is_super_admin = !!body.is_super_admin;
+        if (tipe === 'guru') { u.no_hp = body.no_hp || null; u.kelas_id = body.kelas_id ? Number(body.kelas_id) : null; u.status = 'aktif'; }
+        if (tipe === 'ortu') u.no_hp = body.no_hp || null;
+        list.push(u); return { id: u.id };
+      }
+      const u = list.find(x => x.id === id);
+      if (!u) throw new Error('User tidak ditemukan.');
+      if (m[3] && method === 'POST') {
+        if (!body.password || String(body.password).length < 6) throw new Error('Password baru minimal 6 karakter.');
+        u.password = body.password; return { ok: true };
+      }
+      if (method === 'PUT') {
+        if (!body.nama || !body.email) throw new Error('Nama dan email wajib diisi.');
+        if (emailTaken(body.email, tipe, id)) throw new Error('Email sudah dipakai akun lain.');
+        if (tipe === 'admin' && !body.is_super_admin && !list.some(a => a.is_super_admin && a.id !== id)) throw new Error('Harus ada minimal satu Super Admin.');
+        u.nama = body.nama; u.email = body.email;
+        if (tipe === 'admin') u.is_super_admin = !!body.is_super_admin;
+        if (tipe === 'guru') { u.no_hp = body.no_hp || null; u.kelas_id = body.kelas_id ? Number(body.kelas_id) : null; u.status = body.status || 'aktif'; }
+        if (tipe === 'ortu') u.no_hp = body.no_hp || null;
+        return { ok: true };
+      }
+      if (method === 'DELETE') {
+        if (tipe === 'admin') {
+          if (id === state.user.id) throw new Error('Anda tidak bisa menghapus akun Anda sendiri.');
+          if (u.is_super_admin && !list.some(a => a.is_super_admin && a.id !== id)) throw new Error('Super Admin terakhir tidak boleh dihapus.');
+        }
+        if (tipe === 'ortu' && mockDB.siswa.some(s => s.orang_tua_id === id)) throw new Error('Data ini masih dipakai data lain (siswa/absensi/dll), jadi tidak bisa dihapus.');
+        mockDB.users[tipe] = list.filter(x => x.id !== id); return { ok: true };
+      }
+    }
+    if (base === '/panel/kelas' && method === 'GET') {
+      return mockDB.kelas.map(k => ({ ...k, jumlah_siswa: mockDB.siswa.filter(s => s.kelas_id === k.id).length, wali: mockDB.users.guru.filter(g => g.kelas_id === k.id).map(g => g.nama).join(', ') || null }));
+    }
+    if (base === '/panel/kelas' && method === 'POST') {
+      if (!body.nama || !body.program_kode) throw new Error('Nama kelas dan program wajib diisi.');
+      const k = { id: nextId(mockDB.kelas), nama: body.nama, program_id: body.program_kode === 'KB' ? 1 : 2, program_kode: body.program_kode, kapasitas: Number(body.kapasitas) || 15, tahun_ajaran: body.tahun_ajaran || '2026/2027' };
+      mockDB.kelas.push(k); return { id: k.id };
+    }
+    m = base.match(/^\/panel\/kelas\/(\d+)$/);
+    if (m) {
+      const id = Number(m[1]), k = mockDB.kelas.find(x => x.id === id);
+      if (!k) throw new Error('Kelas tidak ditemukan.');
+      if (method === 'PUT') { if (!body.nama) throw new Error('Nama kelas wajib diisi.'); k.nama = body.nama; k.kapasitas = Number(body.kapasitas) || 15; k.tahun_ajaran = body.tahun_ajaran || '2026/2027'; mockDB.siswa.filter(s => s.kelas_id === id).forEach(s => s.kelas_nama = k.nama); return { ok: true }; }
+      if (method === 'DELETE') {
+        const s = mockDB.siswa.filter(x => x.kelas_id === id).length, g = mockDB.users.guru.filter(x => x.kelas_id === id).length;
+        if (s || g) throw new Error(`Kelas masih berisi ${s} siswa dan ${g} guru. Pindahkan dulu.`);
+        mockDB.kelas = mockDB.kelas.filter(x => x.id !== id); return { ok: true };
+      }
+    }
+    if (base === '/panel/kalender' && method === 'GET') return mockDB.kalenderAkademik.slice().sort((a, b) => a.tanggal_mulai.localeCompare(b.tanggal_mulai));
+    const cek = () => {
+      if (!body.judul || !body.tanggal_mulai) throw new Error('Judul dan tanggal mulai wajib diisi.');
+      if (body.tanggal_selesai && body.tanggal_selesai < body.tanggal_mulai) throw new Error('Tanggal selesai tidak boleh sebelum tanggal mulai.');
+    };
+    if (base === '/panel/kalender' && method === 'POST') { cek(); const r = { id: nextId(mockDB.kalenderAkademik), tanggal_mulai: body.tanggal_mulai, tanggal_selesai: body.tanggal_selesai || null, judul: body.judul, kategori: body.kategori || 'kegiatan' }; mockDB.kalenderAkademik.push(r); return { id: r.id }; }
+    m = base.match(/^\/panel\/kalender\/(\d+)$/);
+    if (m) {
+      const id = Number(m[1]), r = mockDB.kalenderAkademik.find(x => x.id === id);
+      if (method === 'PUT' && r) { cek(); Object.assign(r, { tanggal_mulai: body.tanggal_mulai, tanggal_selesai: body.tanggal_selesai || null, judul: body.judul, kategori: body.kategori || 'kegiatan' }); return { ok: true }; }
+      if (method === 'DELETE') { mockDB.kalenderAkademik = mockDB.kalenderAkademik.filter(x => x.id !== id); return { ok: true }; }
+    }
+  }
+
   throw new Error('(mockup) endpoint tidak dikenali: ' + base);
 }
 
@@ -627,6 +717,7 @@ const ILLUST_BANNER = `
   <g><circle cx="58" cy="58" r="6" fill="#B8F27C"/><rect x="57.1" y="64" width="1.8" height="10" fill="#fff" opacity="0.7"/></g>
 </svg>`;
 
+
 function rupiah(n) { return 'Rp' + Number(n || 0).toLocaleString('id-ID'); }
 
 // ============ TOAST ============
@@ -651,7 +742,7 @@ async function muatKalenderLanding() {
   const el = document.getElementById('kalenderLandingArea');
   try {
     await sleepMock(150);
-    const data = mockDB.kalenderAkademik;
+    const data = mockDB.kalenderAkademik.slice().sort((a, b) => a.tanggal_mulai.localeCompare(b.tanggal_mulai));
     if (!data.length) { el.innerHTML = '<p style="font-size:12.5px;color:var(--muted);padding:12px 0;">Kalender belum tersedia.</p>'; return; }
     el.innerHTML = data.map(k => `
       <div class="kal-item">
@@ -713,6 +804,7 @@ function logout() {
   document.getElementById('screenLogin').classList.add('hidden');
   document.getElementById('mastheadTitle').textContent = 'Pilih program';
   document.getElementById('mastheadSub').textContent = 'Dua program terpisah — pilih dahulu program yang ingin diakses.';
+  muatKalenderLanding();
 }
 
 function masukKeAplikasi() {
@@ -744,6 +836,7 @@ const NAV_BY_ROLE = {
 const NAV_SUPER_ADMIN_EXTRA = [
   { id: 's-absen', label: 'Absensi (semua kelas)' },
   { id: 's-ortu', label: 'Lihat sisi Orang Tua' },
+  { id: 's-panel', label: 'Panel Kontrol' },
 ];
 
 function renderSidebar() {
@@ -766,9 +859,13 @@ function gotoView(id) {
     'o-dash': renderOrtuDashboard, 'o-bayar': renderOrtuBayar, 'o-dok': renderDokumentasi,
     'g-absen': renderGuruAbsensi, 'g-siswa': renderGuruSiswa, 'g-dok': renderDokumentasi,
     'a-dash': renderAdminDashboard, 'a-siswa': renderAdminSiswa, 'a-spp': renderAdminSpp, 'a-dok': renderDokumentasi,
-    's-absen': renderSuperAdminAbsensi, 's-ortu': renderSuperAdminOrtuPreview,
+    's-absen': renderSuperAdminAbsensi, 's-ortu': renderSuperAdminOrtuPreview, 's-panel': renderPanelKontrol,
   };
-  const main = document.getElementById('main');
+  // Wadah halaman baru tiap pindah menu: hasil pemuatan menu sebelumnya yang
+  // terlambat selesai hanya menulis ke wadah lama (terlepas) dan tidak menimpa halaman ini.
+  const lama = document.getElementById('main');
+  const main = lama.cloneNode(false);
+  lama.replaceWith(main);
   main.innerHTML = '<div class="loading">Memuat data...</div>';
   renderers[id]();
 }
@@ -1521,6 +1618,187 @@ async function hapusDokumentasi(id) {
     masukKeAplikasi();
   }
 })();
+
+
+// ============ PANEL KONTROL (SUPER ADMIN) ============
+let panelTab = 'users';
+let panelCache = { users: null, kelas: null, kalender: null };
+const esc = (v) => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const TIPE_LABEL = { admin: 'Admin', guru: 'Guru', ortu: 'Orang Tua' };
+
+function renderPanelKontrol() {
+  document.getElementById('main').innerHTML = `
+    <div class="page-title"><h2>Panel Kontrol</h2></div>
+    <div class="card" style="background:var(--teal-100); border:none;">
+      <p style="font-size:11.5px; color:var(--teal-900); margin:0;">Khusus Super Admin — kelola akun pengguna, rombel/kelas, dan kalender akademik.</p>
+    </div>
+    <div class="pill-filter">
+      <button class="${panelTab === 'users' ? 'on' : ''}" onclick="panelGoto('users')">Pengguna</button>
+      <button class="${panelTab === 'kelas' ? 'on' : ''}" onclick="panelGoto('kelas')">Kelas / Rombel</button>
+      <button class="${panelTab === 'kalender' ? 'on' : ''}" onclick="panelGoto('kalender')">Kalender Akademik</button>
+    </div>
+    <div id="panelArea"><div class="loading">Memuat...</div></div>`;
+  muatPanelTab();
+}
+function panelGoto(t) { panelTab = t; renderPanelKontrol(); }
+function muatPanelTab() {
+  ({ users: muatPanelUsers, kelas: muatPanelKelas, kalender: muatPanelKalender })[panelTab]();
+}
+function panelModal(title, bodyHtml) {
+  closeModal();
+  const o = document.createElement('div');
+  o.className = 'modal-overlay'; o.id = 'modalOverlay';
+  o.innerHTML = `<div class="modal-box">
+    <div class="row" style="border:none; margin-bottom:10px;"><h3 style="margin:0;">${title}</h3>
+    <span style="cursor:pointer; font-size:20px; color:var(--muted); line-height:1;" onclick="closeModal()">&times;</span></div>${bodyHtml}</div>`;
+  document.body.appendChild(o);
+}
+async function panelAksi(fn, okMsg) {
+  try { await fn(); closeModal(); showToast(okMsg); muatPanelTab(); }
+  catch (e) { showToast(e.message); const el = document.getElementById('panelErr'); if (el) el.textContent = e.message; }
+}
+
+// ---- Pengguna ----
+async function muatPanelUsers() {
+  const el = document.getElementById('panelArea');
+  try {
+    const [u, kelas] = await Promise.all([api('/panel/users'), api('/panel/kelas')]);
+    panelCache.users = u; panelCache.kelas = kelas;
+    const tabel = (tipe, judul, rows, kolom) => `
+      <div class="card"><div class="row" style="border:none;"><h3 style="margin:0;">${judul} (${rows.length})</h3>
+        <button class="btn btn-primary" style="width:auto;padding:6px 14px;" onclick="formUser('${tipe}')">+ Tambah ${TIPE_LABEL[tipe]}</button></div>
+        <table><thead><tr>${kolom.map(k => `<th>${k.h}</th>`).join('')}<th></th></tr></thead><tbody>
+        ${rows.map(r => `<tr>${kolom.map(k => `<td>${k.f(r)}</td>`).join('')}
+          <td style="white-space:nowrap;">
+            <button class="btn-mini" title="Edit" onclick="formUser('${tipe}', ${r.id})">Edit</button>
+            <button class="btn-mini" title="Reset password" onclick="formResetPw('${tipe}', ${r.id})">Reset PW</button>
+            <button class="btn-mini danger" title="Hapus" onclick="hapusUser('${tipe}', ${r.id})">Hapus</button></td></tr>`).join('') || `<tr><td colspan="${kolom.length + 1}">Belum ada data.</td></tr>`}
+        </tbody></table></div>`;
+    el.innerHTML =
+      tabel('admin', 'Admin', u.admin, [{ h: 'Nama', f: r => esc(r.nama) }, { h: 'Email', f: r => esc(r.email) }, { h: 'Peran', f: r => r.is_super_admin ? '<span class="badge success">Super Admin</span>' : 'Admin' }]) +
+      tabel('guru', 'Guru', u.guru, [{ h: 'Nama', f: r => esc(r.nama) }, { h: 'Email', f: r => esc(r.email) }, { h: 'No. HP', f: r => esc(r.no_hp || '-') }, { h: 'Kelas', f: r => esc(r.kelas_nama || '-') }, { h: 'Status', f: r => r.status === 'aktif' ? '<span class="badge success">aktif</span>' : '<span class="badge warn">nonaktif</span>' }]) +
+      tabel('ortu', 'Orang Tua', u.ortu, [{ h: 'Nama', f: r => esc(r.nama) }, { h: 'Email', f: r => esc(r.email) }, { h: 'No. HP', f: r => esc(r.no_hp || '-') }, { h: 'Anak', f: r => r.jumlah_anak }]);
+  } catch (e) { el.innerHTML = `<div class="error-msg">${esc(e.message)}</div>`; }
+}
+function formUser(tipe, id) {
+  const r = id ? panelCache.users[tipe].find(x => x.id === id) : {};
+  const kelasOpt = (panelCache.kelas || []).map(k => `<option value="${k.id}" ${r.kelas_id === k.id ? 'selected' : ''}>${esc(k.nama)} (${k.program_kode})</option>`).join('');
+  panelModal(`${id ? 'Edit' : 'Tambah'} ${TIPE_LABEL[tipe]}`, `
+    <form onsubmit="return simpanUser(event, '${tipe}', ${id || 'null'})">
+      <label>Nama</label><input id="uNama" required value="${esc(r.nama)}">
+      <label>Email (untuk login)</label><input id="uEmail" type="email" required value="${esc(r.email)}">
+      ${id ? '' : '<label>Password awal (min. 6 karakter)</label><input id="uPw" type="text" required minlength="6">'}
+      ${tipe !== 'admin' ? `<label>No. HP</label><input id="uHp" value="${esc(r.no_hp)}">` : ''}
+      ${tipe === 'guru' ? `<label>Kelas yang diampu</label><select id="uKelas"><option value="">- belum ada -</option>${kelasOpt}</select>
+        ${id ? `<label>Status</label><select id="uStatus"><option value="aktif" ${r.status !== 'nonaktif' ? 'selected' : ''}>aktif</option><option value="nonaktif" ${r.status === 'nonaktif' ? 'selected' : ''}>nonaktif</option></select>` : ''}` : ''}
+      ${tipe === 'admin' ? `<label><input type="checkbox" id="uSuper" ${r.is_super_admin ? 'checked' : ''} style="width:auto;"> Jadikan Super Admin (akses semua modul)</label>` : ''}
+      <div id="panelErr" class="error-msg"></div>
+      <button class="btn btn-primary" type="submit">Simpan</button>
+    </form>`);
+}
+function simpanUser(e, tipe, id) {
+  e.preventDefault();
+  const v = (i) => { const el = document.getElementById(i); return el ? el.value : undefined; };
+  const body = { nama: v('uNama'), email: v('uEmail'), no_hp: v('uHp'), kelas_id: v('uKelas') || null, status: v('uStatus'), is_super_admin: document.getElementById('uSuper')?.checked };
+  if (!id) body.password = v('uPw');
+  panelAksi(() => api(`/panel/users/${tipe}${id ? '/' + id : ''}`, { method: id ? 'PUT' : 'POST', body: JSON.stringify(body) }), id ? 'Perubahan disimpan.' : 'User ditambahkan.');
+  return false;
+}
+function formResetPw(tipe, id) {
+  const r = panelCache.users[tipe].find(x => x.id === id);
+  panelModal('Reset password', `
+    <form onsubmit="return simpanResetPw(event, '${tipe}', ${id})">
+      <p style="font-size:12px;">Akun: <b>${esc(r.nama)}</b> (${esc(r.email)})</p>
+      <label>Password baru (min. 6 karakter)</label><input id="uNewPw" type="text" required minlength="6">
+      <div id="panelErr" class="error-msg"></div>
+      <button class="btn btn-primary" type="submit">Reset password</button>
+    </form>`);
+}
+function simpanResetPw(e, tipe, id) {
+  e.preventDefault();
+  panelAksi(() => api(`/panel/users/${tipe}/${id}/reset-password`, { method: 'POST', body: JSON.stringify({ password: document.getElementById('uNewPw').value }) }), 'Password direset.');
+  return false;
+}
+function hapusUser(tipe, id) {
+  const r = panelCache.users[tipe].find(x => x.id === id);
+  if (!confirm(`Hapus akun ${r.nama}? Tindakan ini tidak bisa dibatalkan.`)) return;
+  panelAksi(() => api(`/panel/users/${tipe}/${id}`, { method: 'DELETE' }), 'Akun dihapus.');
+}
+
+// ---- Kelas / Rombel ----
+async function muatPanelKelas() {
+  const el = document.getElementById('panelArea');
+  try {
+    const rows = await api('/panel/kelas');
+    panelCache.kelas = rows;
+    el.innerHTML = `<div class="card"><div class="row" style="border:none;"><h3 style="margin:0;">Kelas / Rombel (${rows.length})</h3>
+      <button class="btn btn-primary" style="width:auto;padding:6px 14px;" onclick="formKelas()">+ Tambah kelas</button></div>
+      <table><thead><tr><th>Kelas</th><th>Program</th><th>Tahun ajaran</th><th>Siswa / Kapasitas</th><th>Wali / Guru</th><th></th></tr></thead><tbody>
+      ${rows.map(k => `<tr><td>${esc(k.nama)}</td><td>${k.program_kode}</td><td>${esc(k.tahun_ajaran)}</td><td>${k.jumlah_siswa} / ${k.kapasitas}</td><td>${esc(k.wali || '-')}</td>
+        <td style="white-space:nowrap;"><button class="btn-mini" onclick="formKelas(${k.id})">Edit</button> <button class="btn-mini danger" onclick="hapusKelas(${k.id})">Hapus</button></td></tr>`).join('')}
+      </tbody></table><p style="font-size:11px;color:var(--muted);">Wali kelas diatur lewat tab Pengguna &rarr; Guru &rarr; Edit &rarr; Kelas yang diampu.</p></div>`;
+  } catch (e) { el.innerHTML = `<div class="error-msg">${esc(e.message)}</div>`; }
+}
+function formKelas(id) {
+  const k = id ? panelCache.kelas.find(x => x.id === id) : {};
+  panelModal(id ? 'Edit kelas' : 'Tambah kelas', `
+    <form onsubmit="return simpanKelas(event, ${id || 'null'})">
+      <label>Nama kelas / rombel</label><input id="kNama" required value="${esc(k.nama)}" placeholder="Contoh: KB-C">
+      ${id ? '' : '<label>Program</label><select id="kProg"><option value="KB">KB</option><option value="TPA">TPA</option></select>'}
+      <label>Kapasitas</label><input id="kKap" type="number" min="1" value="${k.kapasitas || 15}">
+      <label>Tahun ajaran</label><input id="kTa" value="${esc(k.tahun_ajaran || '2026/2027')}">
+      <div id="panelErr" class="error-msg"></div>
+      <button class="btn btn-primary" type="submit">Simpan</button>
+    </form>`);
+}
+function simpanKelas(e, id) {
+  e.preventDefault();
+  const body = { nama: kNama.value, kapasitas: kKap.value, tahun_ajaran: kTa.value, program_kode: document.getElementById('kProg')?.value };
+  panelAksi(() => api(`/panel/kelas${id ? '/' + id : ''}`, { method: id ? 'PUT' : 'POST', body: JSON.stringify(body) }), 'Kelas disimpan.');
+  return false;
+}
+function hapusKelas(id) {
+  if (!confirm('Hapus kelas ini?')) return;
+  panelAksi(() => api(`/panel/kelas/${id}`, { method: 'DELETE' }), 'Kelas dihapus.');
+}
+
+// ---- Kalender Akademik ----
+async function muatPanelKalender() {
+  const el = document.getElementById('panelArea');
+  try {
+    const rows = await api('/panel/kalender?tahun_ajaran=2026/2027');
+    panelCache.kalender = rows;
+    el.innerHTML = `<div class="card"><div class="row" style="border:none;"><h3 style="margin:0;">Kalender Akademik 2026/2027 (${rows.length})</h3>
+      <button class="btn btn-primary" style="width:auto;padding:6px 14px;" onclick="formKalender()">+ Tambah kegiatan</button></div>
+      <table><thead><tr><th>Tanggal</th><th>Kegiatan</th><th>Kategori</th><th></th></tr></thead><tbody>
+      ${rows.map(r => `<tr><td>${formatTanggalPendek(r.tanggal_mulai)}${r.tanggal_selesai && r.tanggal_selesai !== r.tanggal_mulai ? ' – ' + formatTanggalPendek(r.tanggal_selesai) : ''}</td><td>${esc(r.judul)}</td><td><span class="badge">${r.kategori}</span></td>
+        <td style="white-space:nowrap;"><button class="btn-mini" onclick="formKalender(${r.id})">Edit</button> <button class="btn-mini danger" onclick="hapusKalender(${r.id})">Hapus</button></td></tr>`).join('')}
+      </tbody></table></div>`;
+  } catch (e) { el.innerHTML = `<div class="error-msg">${esc(e.message)}</div>`; }
+}
+function formKalender(id) {
+  const r = id ? panelCache.kalender.find(x => x.id === id) : {};
+  const kat = ['kegiatan', 'libur', 'ppdb', 'semester'].map(k => `<option ${r.kategori === k ? 'selected' : ''}>${k}</option>`).join('');
+  panelModal(id ? 'Edit kegiatan' : 'Tambah kegiatan', `
+    <form onsubmit="return simpanKalender(event, ${id || 'null'})">
+      <label>Judul kegiatan</label><input id="cJudul" required value="${esc(r.judul)}">
+      <div class="field-row2"><div><label>Tanggal mulai</label><input id="cMulai" type="date" required value="${r.tanggal_mulai || ''}"></div>
+      <div><label>Tanggal selesai (opsional)</label><input id="cSelesai" type="date" value="${r.tanggal_selesai || ''}"></div></div>
+      <label>Kategori</label><select id="cKat">${kat}</select>
+      <div id="panelErr" class="error-msg"></div>
+      <button class="btn btn-primary" type="submit">Simpan</button>
+    </form>`);
+}
+function simpanKalender(e, id) {
+  e.preventDefault();
+  const body = { judul: cJudul.value, tanggal_mulai: cMulai.value, tanggal_selesai: cSelesai.value || null, kategori: cKat.value, tahun_ajaran: '2026/2027' };
+  panelAksi(() => api(`/panel/kalender${id ? '/' + id : ''}`, { method: id ? 'PUT' : 'POST', body: JSON.stringify(body) }), 'Kegiatan disimpan.');
+  return false;
+}
+function hapusKalender(id) {
+  if (!confirm('Hapus kegiatan ini?')) return;
+  panelAksi(() => api(`/panel/kalender/${id}`, { method: 'DELETE' }), 'Kegiatan dihapus.');
+}
 
 </script>
 </body>
